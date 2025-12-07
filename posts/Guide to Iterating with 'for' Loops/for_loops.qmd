@@ -4,8 +4,6 @@ author: "Jacob morrin"
 date: "2025-12-07"
 date-modified: "2025-12-07"
 categories: [python, python concepts, iteration, for loops]
-
-draft: True
 ---
 ## What is this?
 This is my guide to iterating through `for` loops. `for` loops—based on my albeit limited experience—are probably the most common type of looping mechanism used in Python. So it behooves us to understand them well. This guide is an attempt to succinctly capture the main ways in which this type of loop can be used.
