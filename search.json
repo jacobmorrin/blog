@@ -2,16 +2,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "about",
     "section": "",
-    "text": "This is a space for me to publicly document my journey to becoming a professional software engineer, and the lessons learned along the way."
-  },
-  {
-    "objectID": "about.html#about-this-blog",
-    "href": "about.html#about-this-blog",
-    "title": "About",
-    "section": "",
-    "text": "This is a space for me to publicly document my journey to becoming a professional software engineer, and the lessons learned along the way."
+    "text": "I’m Jacob. After ten years as a USAID Foreign Service Officer, I’m pursuing a lifelong dream of becoming a software engineer. This blog is where I document my journey, cement what I’m learning, and occasionally wander into other topics that catch my interest."
   },
   {
     "objectID": "posts/mise-en-place-and-pedac/index.html",
@@ -170,8 +163,8 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "blog",
+    "title": "posts",
     "section": "",
-    "text": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops\n\n\n\npython\n\npython concepts\n\niteration\n\nfor loops\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nPEDAC and Mise en Place Cooking\n\n\n\npython concepts\n\nprogramming\n\nPEDAC\n\nLaunch School\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob morrin\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nA Beginner and Intermediate Python User’s Guide to Iterating with for Loops\n\n\n\npython\n\npython concepts\n\niteration\n\nfor loops\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nPEDAC and Mise en Place Cooking\n\n\n\npython concepts\n\nprogramming\n\nPEDAC\n\nLaunch School\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob morrin\n\n\n\n\n\nNo matching items"
   }
 ]
