@@ -10,5 +10,14 @@
   },
   "about.qmd": {
     "about.html": "4e1f0b55"
+  },
+  "posts/Guide to Iterating with 'for' Loops/for_loops.qmd": {
+    "for_loops.html": "7b43ca8b"
+  },
+  "posts/Fun with Immutability/immutability.qmd": {
+    "immutability.html": "a8fa11b8"
+  },
+  "posts/Mise en Place/mise-en-place.qmd": {
+    "mise-en-place.html": "61054e8a"
   }
 }

@@ -1,0 +1,17 @@
+---
+title: "PEDAC and Mise en Place Cooking"
+author: "Jacob morrin"
+date: "2025-12-04"
+categories: [python concepts, programming, PEDAC, LaunchSchool]
+draft: True
+---
+## What is PEDAC?
+PEDAC is an approach I've been learning to implement at Launch School. PEDAC stands for problem, examples, data, algorithm, code. It is a structured approach to tackling coding problems that starts with establishing a strong grasp of the problem and what success looks like and ends with developing a conceptual algorithm for how to solve the problem, before finally moving on the coding part. 
+
+## What I Like About PEDAC?
+PEDAC has been great for my learning for so many reasons. First, it has forced me to ignore time pressure. Whenever I start on a coding problem, I instinctively feel pressure to solve it as quickly as possible. I feel that I should be able to see the solution immediately, and that I should start coding immediately. When I don't use PEDAC, I am implicitly overestimating my abilities and devaluing the process of thinking through an algorithm (which ironically is the highest value part of the solution). PEDAC forces me to sit back and think through the problem at a higher level, and to my time.
+
+The second thing I am
+
+
+Before I learned about PEDAC, when confronted with a coding problem I would skip immediately to the coding step. 

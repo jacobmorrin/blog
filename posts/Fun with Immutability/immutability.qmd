@@ -1,0 +1,15 @@
+---
+title: "Fun with Immutability"
+author: "Jacob morrin"
+date: "2025-12-04"
+categories: [python, python concepts, python exercises]
+draft: True
+---
+## What is Immutabiity
+
+
+
+
+A tricky concept for beginning students of Python is immutability. In the context of Python, immutability means that the internal state or value of an object cannot be changed after it is created. I remember first brushing over this concept when I first learned it and, anxious to get on to the "real" coding. It's only when you start to grapple with changing lists and strings that you can fully appreciate the implications of this concept and realize its significance. 
+
+The definition I provided above was kind of textbooky. Maybe it would help to discuss it more colloquially, and explore it through a few examples. In practice, if an object is immutable, that means it cannot be changed. 

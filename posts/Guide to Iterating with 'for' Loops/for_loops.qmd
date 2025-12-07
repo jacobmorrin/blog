@@ -1,0 +1,367 @@
+---
+title: "A Beginner and Intermediate Python User's Guide to Iterating with `for` Loops"
+author: "Jacob morrin"
+date: "2025-12-06"
+categories: [python, python concepts, iteration, for loops]
+draft: True
+---
+## What is this?
+This is my guide to iterating through `for` loops. `for` loops—based on my albeit limited experience—are probably the most common type of looping mechanism used in Python. So it behooves us to understand them well. This guide is an attempt to succinctly capture the main ways in which this type of loop can be used.
+
+## The Structure of a `for` Loop
+Before jumping into various techniques, a brief refresher on the basic structure of `for` loops may be helpful. At its core a `for` loop really has two elements: a loop variable and an iterable object. In the below example, `item` is the loop variable, and `items` is the iterable object.
+
+``` python
+items = [1, 2, 3, 4, 5]
+
+for item in items:
+    print(item)
+
+```
+
+I think the loop variable can be confusing for beginners because it seems to come out of nowhere. What is `item`? Where was it defined? Is it important that the word `item` was used? The answer is that this is a special type of variable that Python uses to move through the iterable. In fact, `item` is simply a placeholder and could be anything: `num`, `idx`, and even just a basic `_`.
+
+The second important component of the `for` loop is the iterable object. Iterable objects in Python include `lists`, `sets`, `dictionaries`, `strings`, and other special objects, for example `range()`. More on that below.
+
+## Item-by-Item
+The most basic way that we can iterate with a `for` loop is to simply move through an iterable item-by-item. In the example above, for instance, we loop through each element of the list and print it. Each time the loop runs `item` is replaced by the next element of the list. Pretty simple!
+
+## By Index
+The next most common way of looping through an iterable is by index. This assumes of course that the iterable has indexes. That means `lists`, `tuples`, `strings` and `range` objects. When we want to loop through the indexes of an iterable with indexes, most of the time we actually need to loop through an appropriate sequence of numbers as opposed the iterable itself. And to do that we are going to use a `range` object.
+
+### What is a `range` object?
+A `range` object is a special immutable sequence in Python that represents a progression of integers. A `range` object can take three arguments: `start`, `stop`, `step`. `start` is the number at which the `range` object should start counting from. `stop` is where it should stop generating numbers. And `step` indicates the amount of numbers that should be skipped to get to the next number (e.g. if you wanted to count by twos or threes).
+
+Python will interpret a single number provided to a `range` object as the `stop` argument.
+
+Crucial for our discussion of loops is that the `stop` argument is interpreted to be non-inclusive, and that the default `start` argument will be `0`.
+
+Some examples:
+
+``` python
+range(10) #0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+range(0,10,2) #2, 4, 6, 8
+```
+
+#### Iterating with `range`
+`range()`'s step function means that we can easily iterate through every other element of an iterable.
+
+``` python
+for num in range(0, 11, 2):
+    print(num)
+
+0
+2
+4
+6
+8
+10
+```
+
+### Using `len` in combination with `range`
+A common tactic when you want to loop through indexes is to use `range` in combination with `len`. The output of `len` is the number of characters or elements in an iterable. 
+
+```python
+len('start') #5
+len([1,2,3]) #3
+```
+
+`len` starts counting at `1`, which is useful for us in the context of using `range` to in a for loop. Imagine, for example, that we wanted to `print` every letter of this alphabet `string`: `'abcdefghijklmnopqrstuvwxyz.'` The easiest way to do this of course would be to use the item-by-item approach above. But let's just say you wanted to make things difficult and print the letters according to their index number. 
+
+That means we need to iterate through all 26 letters. More specifically, we need to iterate through the numbers 0 to 25, because indexing starts at 0.Using `range` and `len` in conjunction is a perfect solution to this. `len(abcdefghijklmnopqrstuvwxyz)` is going to give us `26`. And recall that the `stop` argument of `range` is non-inclusive, so `range(26)` is going to give us exactly the sequence of numbers we need to accomplish our task. Even better, we can simply pass `len(abcdefghijklmnopqrstuvwxyz)` as the stop argument to the range object:
+
+```python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+for num in range(len(alphabet)) 
+    print(num) #0, 1, 2, ... 25
+
+```
+
+Notice here that what prints is nothing from `alphabet`. All `alphabet` gives us is the number `26`. The following would be equivalent to the above:
+
+```python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+for num in range(26) 
+    print(num) #0, 1, 2, ... 25
+
+```
+
+Going back to our task—accessing and printing each letter of the alphabet via index, now what is left to do is the accessing part. To do that, we use the same syntax we normally use for accessing an element via index: `iterable[index]`.
+
+Let's go back to the loop. First, let's take a look at the loop variable. While any variable name here would suffice, it can be helpful (for yourself and others) to use something more descriptive. Since our aim is to loop through the index numbers, we can use a word like `idx` or `index` as our variable name:
+
+```python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+for index in range(len(alphabet)):
+    print(alphabet[index]) #a, b, c, ... z
+
+```
+
+Volià! We've done it. As the loop variable `index` increases `alphabet[index]` allows us to access each element of our alphabet string. 
+
+## Comparing Adjacent Elements
+Using the above functions and techniques we can also compare adjacent iterable elements. For example, let's say you wanted to compare one element with the next element in the iterable to see if it was increasing or decreasing.
+
+``` python
+numbers = [5, 12, 8, 15, 3, 20]
+
+# Compare each element with the next one
+for i in range(len(numbers) - 1):
+    current = numbers[i] # Access current element
+    next_item = numbers[i + 1] # Access next element
+    
+    if next_item > current:
+        print(f"{current} → {next_item}: Increasing")
+    else:
+        print(f"{current} → {next_item}: Decreasing")
+```
+Notice here that you need to reduce the size of the `range` object because of [i + 1] which would result in an `IndexError` if you did not subtract 1 from the `range` object.
+
+## By Index and Element Using `enumerate()`
+We've seen how to loop item-by-item and through the index, but sometimes we want to do both. Rather than create two separate loops, Python has a great function, `enumerate()`, that allows us to iterate through both the items and the indexes simultaneously. 
+
+`enumerate` takes as arguments an `iterable` and an optional `start` value, which has a default value of `0` (i.e. starting from the first element in the iterable). When we use `enumerate` in a `for` loop, we use two loop variables: one for the index, and one for the item in the index position. Since the return value of `enumerate` is a tuple with the index value first, it's important that our loop variables are specified in that order or else we'll get confused! It looks like this:
+
+```python
+meals = ['pizza', 'pasta', 'salad']
+
+for index, meal in enumerate(meals):
+    print(index, meal)
+
+#0 pizza
+#1 pasta
+#2 salad
+
+```
+
+`enumerate` is a great tool to have in your Python toolkit, especially when you encounter tricky problems that involve both indices and the items. Take the following problem as an example.
+
+### Examples Using `enumerate()`
+You are given a list of daily max temperatures.
+
+``` python
+december_temps = [
+    32, 28, 35, 40, 38, 33, 29, 25, 22, 30,  # Dec 1-10
+    34, 38, 42, 45, 43, 39, 36, 32, 28, 31,  # Dec 11-20
+    35, 38, 34, 30, 27, 24, 20, 18, 22, 26,  # Dec 21-30
+    30                                        # Dec 31
+]
+```
+You task is to return the days of the month that had temperatures less than 30 degrees. Without enumerate we would probably need to loop through the list, check to see if the temp was less than 30, and then return the relevant index positions (+1 because they start at 0). With `enumerate()` the solution is much simpler:
+
+``` python
+days_below_30 = []
+for day, temp in enumerate(december_temps, start=1):
+    if temp < 30:
+        days_below_30.append(day)
+```
+
+We could also write the same answer as a list comprehension:
+
+``` python
+days_below_30 = [day for day, temp in enumerate(december_temps, start=1) if temp < 30]
+```
+
+Another common use case of `enumerate()` is with strings. Often there are these problems that ask you to do something with every other letter. That is a great time to use `enumerate()` because for this type of problem we need to know the indexes (the 'every other' part of the problem) and we need to do something with the character. Imagine a problem that asks you, for example, to capitalize every other letter of a string. With `enumerate()` your solution could look something like this:
+
+``` python
+string = "how does this string read in your head?"
+new_string = ''
+
+for index, character in enumerate(string):
+    if index % 2 == 0:
+        new_string += character.upper()
+    else:
+        new_string += character
+
+print(new_string) # HoW DoEs tHiS StRiNg rEaD In yOuR HeAd?
+
+```
+
+Very nifty.
+
+## Breaking Out of `for` Loops
+Sometimes we want the loop to stop looping when a certain condition has been met. You may, for example, want to stop looping once you've found the thing you're looking for. We can stop the loop using `break`.
+
+``` python
+# Stop searching when you've found the 'target'
+numbers = [1, 2, 3, 4, 101, 6, 7]
+
+for num in numbers:
+    if num > 100:
+        print('Found a number greater than 100!')
+        break
+    print('Checking numbers...')
+```
+
+## Using 'Sliding Windows' to Evaluate Multiple Elements in a Row
+Another tricky form of iteration involves evaluating consecutive elements simultaneously. This is probably best explained via an example. Imagine a problem that asks you to return the highest sum of three consecutive elements in a list. Given this list: 
+
+``` python
+lst = [1, 2, 3, 4, 5]
+```
+
+We need to iterate through this list three elements at a time to compare the following:
+
+``` python
+sum([1,2,3])
+sum([2,3,4])
+sum([3,4,5])
+```
+
+There are a couple of different techniques for how to do this.
+
+### Creating a 'window' with Slicing
+One good technique for this type of problem is to use slicing. 
+
+``` python
+numbers = [1, 2, 3, 4, 5]
+max_sum = 0
+
+for i in range(len(numbers) - 2):
+    current_sum = sum(numbers[i:i+3])  # Slice of 3 elements
+    if current_sum > max_sum:
+        max_sum = current_sum
+```
+
+In this loop the way we create the 'window' is `numbers[i:i+3]`. On the first loop through, for example, this will yield `numbers[0:3]`. Each time we go through the loop, as `i` increases by `1`, the window moves through the list.
+
+For this type of looping it is crucial to remember that we need to update the `range` object to reflect the fact that we are moving a 'window' through the iterable. The `i+3` means that our slice is going to 'hit' the end of the range object before `i`.
+
+It's worth going in-depth on this because I think it can be confusing. Going back to our example, our list `numbers` has 5 index slots. `[i:i+3]` is going to have the following values:
+
+``` python
+Loop 1: [0:3]
+Loop 2: [1:4]
+Loop 3: [2:5]
+Loop 4: [3:6] # There is no 6th index position!
+```
+As you can see, even though there are 5 index position, when we use a window we won't actually loop through every index position because the 'right side' of our 'window' will hit the end of the range on at the end of the third loop—at least that's how I like to think about it. That is why we need to reduce the size of the `range` object to compensate. The formula for reducing the `range` object is the length of the iterable (5 in this case) less the size of the window (3 in this case), which means we need to reduce the `range` object, in this case, by 2. `range(len(number))` == `range(5)`, so we want `range(5 - 2)` so that we iterate through the 0, 1, 2 index positions.
+
+## Nested `for` Loops
+More advanced problems often require loops within loops. A nested loop is a loop within another loop. When you have a nested loop, the inner loop completes all of its iterations for each iteration of the outer loop. A clock provides a useful analogy. A clock's hour hand is like an outer loop, and the minute hand is like an inner loop. For each movement of the hour hand (outer loop), the minute hand (inner loop) must complete a full set of iterations. Here's that analogy expressed as a loop:
+
+``` python
+for hour in range(0, 25): #24 hours in a day
+    for minute in range(0, 60): #60 minutes in an hour (but don't show 60)
+        print(f'{hour}:{minute:02d}')
+# 0:00
+# 0:01
+# 0:02
+# 0:03
+# 0:04
+# 0:05
+# 0:06
+# 0:07
+# 0:08
+# 0:09
+# 0:10
+# 0:11
+# 0:12
+```
+
+Nested loops are great for generating two-dimensional arrays or matrices—think a multiplication table or a deck of cards.
+
+### Generating a Deck of Cards Using Nested Loops
+```python
+suits = ['♥', '♣', '♦', '♠']
+values = ['A', '2', '3', '4', '5', '6',
+              '7', '8', '9', '10',
+              'J', 'Q', 'K'
+              ]
+
+deck = []
+
+for suit in suits:
+    for value in values:
+        deck.append([suit, value])
+
+print(deck)
+
+#['♥', 'A'], ['♥', '2'], ['♥', '3'], ['♥', '4']...
+```
+
+### Generating a Multiplication Table Using Nested Loops
+``` python
+for x in range(11):
+    for y in range(11):
+        print(f'{x} x {y} = {x * y}')
+    print('---')
+
+# 0 x 0 = 0
+# 0 x 1 = 0
+# 0 x 2 = 0
+# 0 x 3 = 0
+# 0 x 4 = 0
+# 0 x 5 = 0
+# 0 x 6 = 0
+# 0 x 7 = 0
+# 0 x 8 = 0
+# 0 x 9 = 0
+# 0 x 10 = 0
+# ---
+# 1 x 0 = 0
+# 1 x 1 = 1
+# 1 x 2 = 2
+# 1 x 3 = 3
+# 1 x 4 = 4
+# 1 x 5 = 5
+# 1 x 6 = 6
+# 1 x 7 = 7
+# 1 x 8 = 8
+# 1 x 9 = 9
+# 1 x 10 = 10
+
+```
+## Double Loops and 'Variable-Size Windows'
+A cousin of the 'sliding window' is a 'sliding variable-size window.' I think the classic problem here is looking for palindromic substrings. 
+
+``` python
+text = 'racecar'
+
+for i in range(len(text)): #'i' is the starting index
+    for j in range(i + 1, len(text) + 1): #'j' is the end index
+        substring = text[i:j]
+        if substring == substring[::-1] and len(substring) > 1:
+            palindromes.append(substring)
+```
+
+In this solution we loop through each index position of the text (0, 2...6)—these are the start indices. `j` is our end index so we want our `range` object to start with 1 (the `i + 1`) and end with `7` (`len(text) + 1`) so that when we slice later the `7` will allow us to access the last character of the text (since the end number used in a slice is non-inclusive we need 1 greater than the length of our text).
+
+## Iterating Through Multiple Iterables at Once Using `zip()`
+Sometimes we need to loop between two sets of iterables at the same time. For example, let's say we had a list of names and ages separate lists and we want to print them together. As long as the two lists are the same size, `zip()` combines the similarly indexed elements into a tuple and works similar to `enumerate()` as described above.
+
+``` python
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+
+for name, age in zip(names, ages):
+    print(f"{name} is {age} years old")
+```
+
+## Using Python's `for`...`else` Loops
+Something I learned putting this guide together is that Python supports a `for`...`else` loop construction. The `else` block executes only if the main `for` loop completes normally without hitting a `break` statement.
+
+```python
+names = ['Luke', 'Leia', 'Vader', 'C-3PO']
+target = 'Han'
+
+for name in names:
+    if name == target:
+        print(f"Found {target} They're on the list!")
+        break
+
+else:
+    print(f'{target} is not on the list!')
+```
+
+
+## Common `for` Loop Pitfalls
+
+## for else
+
+## break and continue
