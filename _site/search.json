@@ -14,164 +14,171 @@
     "text": "This is a space for me to publicly document my journey to becoming a professional software engineer, and the lessons learned along the way."
   },
   {
-    "objectID": "posts/Mise en Place/index.html",
-    "href": "posts/Mise en Place/index.html",
+    "objectID": "posts/mise-en-place-and-pedac/index.html",
+    "href": "posts/mise-en-place-and-pedac/index.html",
     "title": "PEDAC and Mise en Place Cooking",
     "section": "",
     "text": "So there you are in the kitchen. You’ve decided to make a nice meal—maybe for yourself, or maybe for someone else. You’ve picked the recipe, done the grocery shopping, and you’re ready to jump in. You start heating up some olive oil in the pan and read step 1:\n\nSTEP 1: Add the diced onion to the pot.\n\nOkay no problem you may not have chopped the onion, but you’ve got it in front of you. You finish chopping and throw it in the pot. Onto step 2:\n\nSTEP 2: Add the minced garlic and 1/2 teaspoon oregano to the pot.\n\nGarlic—shoot! Mincing that is going to take some time. And where do we keep the oregano again? I could have sworn we had that in the pantry. Is it not there? And where the heck are the measuring spoons?\nThings are starting to spiral. The onions are burning. The kitchen is already a mess and you’re only on step 2. What went wrong?"
   },
   {
-    "objectID": "posts/Mise en Place/index.html#cooking-without-a-plan",
-    "href": "posts/Mise en Place/index.html#cooking-without-a-plan",
+    "objectID": "posts/mise-en-place-and-pedac/index.html#cooking-without-a-plan",
+    "href": "posts/mise-en-place-and-pedac/index.html#cooking-without-a-plan",
     "title": "PEDAC and Mise en Place Cooking",
     "section": "",
     "text": "So there you are in the kitchen. You’ve decided to make a nice meal—maybe for yourself, or maybe for someone else. You’ve picked the recipe, done the grocery shopping, and you’re ready to jump in. You start heating up some olive oil in the pan and read step 1:\n\nSTEP 1: Add the diced onion to the pot.\n\nOkay no problem you may not have chopped the onion, but you’ve got it in front of you. You finish chopping and throw it in the pot. Onto step 2:\n\nSTEP 2: Add the minced garlic and 1/2 teaspoon oregano to the pot.\n\nGarlic—shoot! Mincing that is going to take some time. And where do we keep the oregano again? I could have sworn we had that in the pantry. Is it not there? And where the heck are the measuring spoons?\nThings are starting to spiral. The onions are burning. The kitchen is already a mess and you’re only on step 2. What went wrong?"
   },
   {
-    "objectID": "posts/Mise en Place/index.html#the-two-layer-problem",
-    "href": "posts/Mise en Place/index.html#the-two-layer-problem",
+    "objectID": "posts/mise-en-place-and-pedac/index.html#the-two-layer-problem",
+    "href": "posts/mise-en-place-and-pedac/index.html#the-two-layer-problem",
     "title": "PEDAC and Mise en Place Cooking",
     "section": "The Two Layer Problem",
     "text": "The Two Layer Problem\nWhat went wrong is what Launch School calls “The Two-Layer Problem”. In the context of coding, the two-layer problem is defined as “learning to solve problems while simultaneously memorizing the syntax of a particular language.” In other words, it is extremely difficult to solve a problem while you are at the same time learning how to use the tool you need to solve the problem. If we go back to the cooking analogy, the two-layer problem is cooking the meal, while prepping for the meal. When we try to divide our limited focus between two complex tasks, things become difficult. We get lost hacking and slashing our way through the problem, or—if we’re in the kitchen—the kitchen becomes a mess and our meal is not prepared according to plan—maybe it even gets burnt!\nIn coding, this looks like trying to solve ‘find the duplicate number in this list’ while simultaneously Googling ‘how do Python dictionaries work’ and ‘what is a set in Python.’ You’re trying to learn the tools while solving the problem—and both suffer as a result.”"
   },
   {
-    "objectID": "posts/Mise en Place/index.html#mise-en-place",
-    "href": "posts/Mise en Place/index.html#mise-en-place",
+    "objectID": "posts/mise-en-place-and-pedac/index.html#mise-en-place",
+    "href": "posts/mise-en-place-and-pedac/index.html#mise-en-place",
     "title": "PEDAC and Mise en Place Cooking",
     "section": "Mise en Place",
     "text": "Mise en Place\nThe solution to the two-layer problem in the kitchen is mise en place. Mise en place is a French culinary terms meaning “everything in its place.” Mise en place involves reading through the recipe, preparing ingredients (i.e. chopping the onions, measuring the spices), and organizing the kitchen in advance. Somewhat paradoxically, mise en place actually saves you time in the kitchen because you no longer need to search for ingredients as you cook. Who among us had not had the experience of tracking down an obscure (or not-so obscure) spice while something is cooking on the stove? Using mise en place also results in a higher quality output because you, the cook, can focus on ensuring the meal—the flavors—are accurate."
   },
   {
-    "objectID": "posts/Mise en Place/index.html#pedac",
-    "href": "posts/Mise en Place/index.html#pedac",
+    "objectID": "posts/mise-en-place-and-pedac/index.html#pedac",
+    "href": "posts/mise-en-place-and-pedac/index.html#pedac",
     "title": "PEDAC and Mise en Place Cooking",
     "section": "PEDAC",
     "text": "PEDAC\nPEDAC is the mise en place of coding. PEDAC stands for problem, examples, data, algorithm, code. It is a structured approach to tackling coding problems that starts with establishing a strong grasp of the problem (i.e. reading the recipe) and ends with developing a conceptual algorithm for how to solve the problem (i.e. preparing and organizing your ingredients), before finally moving on the coding (i.e. cooking).\nUsed appropriately, PEDAC pushes us to separate the two processes of solving the problem and developing a coding solution. Solving the problem is a higher-level of thinking that requires thinking through an algorithm that would result in a viable solution. The algorithm should be language-agnostic, meaning that it could be operationalized in the next step with any coding language. Developing a coding solution is more tactical than strategic, wherein you grapple with the coding syntax and tools used to implement the algorithm.\n\nPEDAC Example\nLet’s see PEDAC in action. Imagine the following problem: Write a function that counts vowels in a string. Here is how I would implement PEDAC.\n\"\"\"\nPROBLEM:\n- Write a function that counts the vowels in a string. The function\nshould take a string and count the number of vowels (aeiou) that\noccur. The fuction should return the number of vowels.\n\nRULES/RESTRICTIONS:\n- Case does not matter. We should count all vowels AEIOUaeiou\nregardless of case\n\nEXAMPLE:\nvowel_counter(\"A book about a boy\") -&gt; 8\n\nDATA:\nInput: string\nOutput: int\nIntermediary: counter for vowels\n\nALGORITHM:\n- DEFINE the function vowel_counter(s)\n- INITIALIZE a constant VOWELs with AEIOUaeiou\n- INITIALIZE a counter variable \n- LOOP through each character in the string\n- CHECK if the character is in VOWELS\n    - If it is, increment count by 1\n- RETURN count\n\"\"\"\nVOWELS = 'AEIOUaeiou'\ndef vowel_counter(s):\n    counter = 0\n\n    for char in s:\n        if char in VOWELS:\n            counter += 1\n    \n    return counter\n\nprint(vowel_counter(\"A book about a boy\") == 8) # True\nWhen you do PEDAC correctly, the coding doesn’t even feel like coding. It feels like I am just following instructions.\n\n\nBenefits of PEDAC\n\nResisting Time Pressure\nUsing PEDAC has a number of benefits. First, it challenges me to ignore time pressure. When I start a coding problem, my instinct is to jump into the coding as soon as possible. I feel this pressure to see the solution immediately. I feel the cooking analogy is applicable here. Often when I start cooking I feel a strong desire to turn the stove on and just get to the cooking part as soon as possible. But experience has shown that doing that leads to a more stressful, messy, and less enjoyable cooking experience because I am frantically shifting between the food and the pot and the preparation. The paradox is that investing the time up front to prepare the ingredients actually results in faster cooking time. PEDAC is no different.\nI think this instinct to jump straight to coding—despite it being counterproductive—is similar to recent findings about AI coding assistants. METR did a study on the impact of AI on open-source developer productivity. They found that “when developers use AI tools, they take 19% longer than without—AI makes them slower.” This is in spite of the fact that developers ” estimated that they were sped up by 20% on average when using AI—so they were mistaken about AI’s impact on their productivity.” Bringing this back to our discussion, I imagine that it just feels faster using AI to jump into a coding solution, just like it feels faster to start heating up the oil in the kitchen before the ingredients have been prepared.\n\n\nFlexibility\nPEDAC scales. It can be used for simple problems, but it can also be applied to advanced problems. PEDAC will help take one very complicated problem and break it down into multiple easier problems. The process of using PEDAC is also iterative, not linear. To a limited extent, PEDAC encourages shifting between your coding solution and the algorithm you’ve developed so that you can incorporate new information into the algorithm.\nPEDAC is also flexible in how you implement it. Some developers prefer detailed written algorithms, others use pseudocode, and some sketch diagrams. The framework adapts to your learning style while maintaining its core structure.\n\n\nConfidence\nPEDAC can help build confidence. I’m just a Python beginner, but already I’ve encountered many problems that upon first reading, I have no idea how to solve. Rather than freak out, PEDAC provides the structure with which to approach a difficult problem. It gives you the confidence to say, “I may not know how to solve this problem, but I do know how to apply PEDAC, so let’s give it a shot.”"
   },
   {
-    "objectID": "posts/Mise en Place/index.html#conclusion",
-    "href": "posts/Mise en Place/index.html#conclusion",
+    "objectID": "posts/mise-en-place-and-pedac/index.html#conclusion",
+    "href": "posts/mise-en-place-and-pedac/index.html#conclusion",
     "title": "PEDAC and Mise en Place Cooking",
     "section": "Conclusion",
     "text": "Conclusion\nRecently, a Launch School TA shared valuable advice: the best coders recognize when they’re hacking and slashing, stop immediately, and return to the algorithm. The feeling of hacking and slashing is one I’m familiar with both in the kitchen and in coding. In the kitchen, I’ll be sauteing onions and realize that I am not prepared for the next steps. The solution is simple—turn off the stove and go back to prepping, but for some reason taking that step “backward” is hard to take. The same goes for coding. I know when I’m grasping for a solution, feeling tantalizingly close to coming up with something out of nowhere, and ultimately spinning my wheels. The solution is easy—go back to the algorithm, go back to PEDAC. That’s something—being more self-aware when I’m hacking and slashing and giving it up to return to the algorithm—I’m trying to do more intentionally."
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html",
+    "objectID": "posts/guide-to-for-loops/index.html",
+    "href": "posts/guide-to-for-loops/index.html",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "",
     "text": "This is my guide to iterating through for loops. for loops—based on my albeit limited experience—are probably the most common type of looping mechanism used in Python. So it behooves us to understand them well. This guide is an attempt to succinctly capture the main ways in which this type of loop can be used."
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#what-is-this",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#what-is-this",
+    "objectID": "posts/guide-to-for-loops/index.html#what-is-this",
+    "href": "posts/guide-to-for-loops/index.html#what-is-this",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "",
     "text": "This is my guide to iterating through for loops. for loops—based on my albeit limited experience—are probably the most common type of looping mechanism used in Python. So it behooves us to understand them well. This guide is an attempt to succinctly capture the main ways in which this type of loop can be used."
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#the-structure-of-a-for-loop",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#the-structure-of-a-for-loop",
+    "objectID": "posts/guide-to-for-loops/index.html#the-structure-of-a-for-loop",
+    "href": "posts/guide-to-for-loops/index.html#the-structure-of-a-for-loop",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "The Structure of a for Loop",
     "text": "The Structure of a for Loop\nBefore jumping into various techniques, a brief refresher on the basic structure of for loops may be helpful. At its core a for loop really has two elements: a loop variable and an iterable object. In the below example, item is the loop variable, and items is the iterable object.\nitems = [1, 2, 3, 4, 5]\n\nfor item in items:\n    print(item)\nI think the loop variable can be confusing for beginners because it seems to come out of nowhere. What is item? Where was it defined? Is it important that the word item was used? The answer is that this is a special type of variable that Python uses to move through the iterable. In fact, item is simply a placeholder and could be anything: num, idx, and even just a basic _.\nThe second important component of the for loop is the iterable object. Iterable objects in Python include lists, sets, dictionaries, strings, and other special objects, for example range(). More on that below."
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#item-by-item",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#item-by-item",
+    "objectID": "posts/guide-to-for-loops/index.html#item-by-item",
+    "href": "posts/guide-to-for-loops/index.html#item-by-item",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Item-by-Item",
     "text": "Item-by-Item\nThe most basic way that we can iterate with a for loop is to simply move through an iterable item-by-item. In the example above, for instance, we loop through each element of the list and print it. Each time the loop runs item is replaced by the next element of the list. Pretty simple!"
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#by-index",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#by-index",
+    "objectID": "posts/guide-to-for-loops/index.html#by-index",
+    "href": "posts/guide-to-for-loops/index.html#by-index",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "By Index",
     "text": "By Index\nThe next most common way of looping through an iterable is by index. This assumes of course that the iterable has indexes. That means lists, tuples, strings and range objects. When we want to loop through the indexes of an iterable with indexes, most of the time we actually need to loop through an appropriate sequence of numbers as opposed the iterable itself. And to do that we are going to use a range object.\n\nWhat is a range object?\nA range object is a special immutable sequence in Python that represents a progression of integers. A range object can take three arguments: start, stop, step. start is the number at which the range object should start counting from. stop is where it should stop generating numbers. And step indicates the amount of numbers that should be skipped to get to the next number (e.g. if you wanted to count by twos or threes).\nPython will interpret a single number provided to a range object as the stop argument.\nCrucial for our discussion of loops is that the stop argument is interpreted to be non-inclusive, and that the default start argument will be 0.\nSome examples:\nrange(10) #0, 1, 2, 3, 4, 5, 6, 7, 8, 9\n\nrange(0,10,2) #2, 4, 6, 8\n\nIterating with range\nrange()’s step function means that we can easily iterate through every other element of an iterable.\nfor num in range(0, 11, 2):\n    print(num)\n\n0\n2\n4\n6\n8\n10\n\n\n\nUsing len in combination with range\nA common tactic when you want to loop through indexes is to use range in combination with len. The output of len is the number of characters or elements in an iterable.\nlen('start') #5\nlen([1,2,3]) #3\nlen starts counting at 1, which is useful for us in the context of using range to in a for loop. Imagine, for example, that we wanted to print every letter of this alphabet string: 'abcdefghijklmnopqrstuvwxyz.' The easiest way to do this of course would be to use the item-by-item approach above. But let’s just say you wanted to make things difficult and print the letters according to their index number.\nThat means we need to iterate through all 26 letters. More specifically, we need to iterate through the numbers 0 to 25, because indexing starts at 0.Using range and len in conjunction is a perfect solution to this. len(abcdefghijklmnopqrstuvwxyz) is going to give us 26. And recall that the stop argument of range is non-inclusive, so range(26) is going to give us exactly the sequence of numbers we need to accomplish our task. Even better, we can simply pass len(abcdefghijklmnopqrstuvwxyz) as the stop argument to the range object:\nalphabet = 'abcdefghijklmnopqrstuvwxyz'\n\nfor num in range(len(alphabet)):\n    print(num) #0, 1, 2, ... 25\nNotice here that what prints is nothing from alphabet. All alphabet gives us is the number 26. The following would be equivalent to the above:\nalphabet = 'abcdefghijklmnopqrstuvwxyz'\n\nfor num in range(26):\n    print(num) #0, 1, 2, ... 25\nGoing back to our task—accessing and printing each letter of the alphabet via index, now what is left to do is the accessing part. To do that, we use the same syntax we normally use for accessing an element via index: iterable[index].\nLet’s go back to the loop. First, let’s take a look at the loop variable. While any variable name here would suffice, it can be helpful (for yourself and others) to use something more descriptive. Since our aim is to loop through the index numbers, we can use a word like idx or index as our variable name:\nalphabet = 'abcdefghijklmnopqrstuvwxyz'\n\nfor index in range(len(alphabet)):\n    print(alphabet[index]) #a, b, c, ... z\nVoilà! We’ve done it. As the loop variable index increases alphabet[index] allows us to access each element of our alphabet string."
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#comparing-adjacent-elements",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#comparing-adjacent-elements",
+    "objectID": "posts/guide-to-for-loops/index.html#comparing-adjacent-elements",
+    "href": "posts/guide-to-for-loops/index.html#comparing-adjacent-elements",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Comparing Adjacent Elements",
     "text": "Comparing Adjacent Elements\nUsing the above functions and techniques we can also compare adjacent iterable elements. For example, let’s say you wanted to compare one element with the next element in the iterable to see if it was increasing or decreasing.\nnumbers = [5, 12, 8, 15, 3, 20]\n\n# Compare each element with the next one\nfor i in range(len(numbers) - 1):\n    current = numbers[i] # Access current element\n    next_item = numbers[i + 1] # Access next element\n    \n    if next_item &gt; current:\n        print(f\"{current} → {next_item}: Increasing\")\n    else:\n        print(f\"{current} → {next_item}: Decreasing\")\nNotice here that you need to reduce the size of the range object because of [i + 1] which would result in an IndexError if you did not subtract 1 from the range object.\nThis is actually a simple form of the ‘sliding window’ technique we’ll explore more later. Here we’re using a window of size 2 (i + 1) to look at pairs of adjacent elements."
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#by-index-and-element-using-enumerate",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#by-index-and-element-using-enumerate",
+    "objectID": "posts/guide-to-for-loops/index.html#by-index-and-element-using-enumerate",
+    "href": "posts/guide-to-for-loops/index.html#by-index-and-element-using-enumerate",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "By Index and Element Using enumerate()",
     "text": "By Index and Element Using enumerate()\nWe’ve seen how to loop item-by-item and through the index, but sometimes we want to do both. Rather than create two separate loops, Python has a great function, enumerate(), that allows us to iterate through both the items and the indexes simultaneously.\nenumerate takes as arguments an iterable and an optional start value, which has a default value of 0 (i.e. starting from the first element in the iterable). When we use enumerate in a for loop, we use two loop variables: one for the index, and one for the item in the index position. Since the return value of enumerate is a tuple with the index value first, it’s important that our loop variables are specified in that order or else we’ll get confused! It looks like this:\nmeals = ['pizza', 'pasta', 'salad']\n\nfor index, meal in enumerate(meals):\n    print(index, meal)\n\n#0 pizza\n#1 pasta\n#2 salad\nenumerate is a great tool to have in your Python toolkit, especially when you encounter tricky problems that involve both indices and the items. Take the following problem as an example.\n\nExamples Using enumerate()\nYou are given a list of daily max temperatures.\ndecember_temps = [\n    32, 28, 35, 40, 38, 33, 29, 25, 22, 30,  # Dec 1-10\n    34, 38, 42, 45, 43, 39, 36, 32, 28, 31,  # Dec 11-20\n    35, 38, 34, 30, 27, 24, 20, 18, 22, 26,  # Dec 21-30\n    30                                        # Dec 31\n]\nYou task is to return the days of the month that had temperatures less than 30 degrees. Without enumerate we would probably need to loop through the list, check to see if the temp was less than 30, and then return the relevant index positions (+1 because they start at 0). With enumerate() the solution is much simpler:\ndays_below_30 = []\nfor day, temp in enumerate(december_temps, start=1):\n    if temp &lt; 30:\n        days_below_30.append(day)\nWe could also write the same answer as a list comprehension:\ndays_below_30 = [day for day, temp in enumerate(december_temps, start=1) if temp &lt; 30]\nAnother common use case of enumerate() is with strings. Often there are these problems that ask you to do something with every other letter. That is a great time to use enumerate() because for this type of problem we need to know the indexes (the ‘every other’ part of the problem) and we need to do something with the character. Imagine a problem that asks you, for example, to capitalize every other letter of a string. With enumerate() your solution could look something like this:\nstring = \"how does this string read in your head?\"\nnew_string = ''\n\nfor index, character in enumerate(string):\n    if index % 2 == 0:\n        new_string += character.upper()\n    else:\n        new_string += character\n\nprint(new_string) # HoW DoEs tHiS StRiNg rEaD In yOuR HeAd?\nVery nifty."
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#breaking-out-of-for-loops",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#breaking-out-of-for-loops",
+    "objectID": "posts/guide-to-for-loops/index.html#breaking-out-of-for-loops",
+    "href": "posts/guide-to-for-loops/index.html#breaking-out-of-for-loops",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Breaking Out of for Loops",
     "text": "Breaking Out of for Loops\nSometimes we want the loop to stop looping when a certain condition has been met. You may, for example, want to stop looping once you’ve found the thing you’re looking for. We can stop the loop using break.\n# Stop searching when you've found the 'target'\nnumbers = [1, 2, 3, 4, 101, 6, 7]\n\nfor num in numbers:\n    if num &gt; 100:\n        print('Found a number greater than 100!')\n        break\n    print('Checking numbers...')"
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#skipping-iterations-using-continue",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#skipping-iterations-using-continue",
+    "objectID": "posts/guide-to-for-loops/index.html#skipping-iterations-using-continue",
+    "href": "posts/guide-to-for-loops/index.html#skipping-iterations-using-continue",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Skipping Iterations Using continue",
     "text": "Skipping Iterations Using continue\nWe can use continue to skip the rest of a loop and jump to the next iteration. This is useful if you know there are values you want to ignore in your list.\n\nPrinting Odd Numbers Using continue\nfor num in range(20):\n    if num % 2 == 0:\n        continue\n    print(num)\n\n# 1\n# 3\n# 5\n# 7\n# 9\n# 11\n# 13\n# 15\n# 17\n# 19\n\n\nSkipping Weekdays Using continue\nWEEKEND = ['Sat', 'Sun']\ndays = ['Mon', 'Tues', 'Sat', 'Thu', 'Fri', 'Sun']\n\nfor day in days:\n    if day in WEEKEND:\n        continue\n    print(f'{day} is a weekday!')\n\n# Mon is a weekday!\n# Tues is a weekday!\n# Thu is a weekday!\n# Fri is a weekday!"
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#using-sliding-windows-to-evaluate-multiple-elements-in-a-row",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#using-sliding-windows-to-evaluate-multiple-elements-in-a-row",
+    "objectID": "posts/guide-to-for-loops/index.html#using-sliding-windows-to-evaluate-multiple-elements-in-a-row",
+    "href": "posts/guide-to-for-loops/index.html#using-sliding-windows-to-evaluate-multiple-elements-in-a-row",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Using ‘Sliding Windows’ to Evaluate Multiple Elements in a Row",
     "text": "Using ‘Sliding Windows’ to Evaluate Multiple Elements in a Row\nAnother tricky form of iteration involves evaluating consecutive elements simultaneously. This is probably best explained via an example. Imagine a problem that asks you to return the highest sum of three consecutive elements in a list. Given this list:\nlst = [1, 2, 3, 4, 5]\nWe need to iterate through this list three elements at a time to compare the following:\nsum([1,2,3])\nsum([2,3,4])\nsum([3,4,5])\nThere are a couple of different techniques for how to do this.\n\nCreating a ‘window’ with Slicing\nOne good technique for this type of problem is to use slicing.\nnumbers = [1, 2, 3, 4, 5]\nmax_sum = 0\n\nfor i in range(len(numbers) - 2):\n    current_sum = sum(numbers[i:i+3])  # Slice of 3 elements\n    if current_sum &gt; max_sum:\n        max_sum = current_sum\nIn this loop the way we create the ‘window’ is numbers[i:i+3]. On the first loop through, for example, this will yield numbers[0:3]. Each time we go through the loop, as i increases by 1, the window moves through the list.\nFor this type of looping it is crucial to remember that we need to update the range object to reflect the fact that we are moving a ‘window’ through the iterable. The i+3 means that our slice is going to ‘hit’ the end of the range object before i.\nIt’s worth going in-depth on this because I think it can be confusing. Going back to our example, our list numbers has 5 index slots. [i:i+3] is going to have the following values:\nLoop 1: [0:3]\nLoop 2: [1:4]\nLoop 3: [2:5]\nLoop 4: [3:6] # There is no 6th index position!\nAs you can see, even though there are 5 index position, when we use a window we won’t actually loop through every index position because the ‘right side’ of our ‘window’ will hit the end of the range on at the end of the third loop—at least that’s how I like to think about it. That is why we need to reduce the size of the range object to compensate. The formula for reducing the range object is the length of the iterable (5 in this case) less the size of the window (3 in this case), which means we need to reduce the range object, in this case, by 2. range(len(number)) == range(5), so we want range(5 - 2) so that we iterate through the 0, 1, 2 index positions."
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#nested-for-loops",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#nested-for-loops",
+    "objectID": "posts/guide-to-for-loops/index.html#nested-for-loops",
+    "href": "posts/guide-to-for-loops/index.html#nested-for-loops",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Nested for Loops",
     "text": "Nested for Loops\nMore advanced problems often require loops within loops. A nested loop is a loop within another loop. When you have a nested loop, the inner loop completes all of its iterations for each iteration of the outer loop. A clock provides a useful analogy. A clock’s hour hand is like an outer loop, and the minute hand is like an inner loop. For each movement of the hour hand (outer loop), the minute hand (inner loop) must complete a full set of iterations. Here’s that analogy expressed as a loop:\nfor hour in range(0, 24): #24 hours in a day (0 is first hour, 23 last)\n    for minute in range(0, 60): #60 minutes in an hour (but don't show 60)\n        print(f'{hour}:{minute:02d}')\n# 0:00\n# 0:01\n# 0:02\n# 0:03\n# 0:04\n# 0:05\n# 0:06\n# 0:07\n# 0:08\n# 0:09\n# 0:10\n# 0:11\n# 0:12\nNested loops are great for generating two-dimensional arrays or matrices—think a multiplication table or a deck of cards.\n\nGenerating a Deck of Cards Using Nested Loops\nsuits = ['♥', '♣', '♦', '♠']\nvalues = ['A', '2', '3', '4', '5', '6',\n              '7', '8', '9', '10',\n              'J', 'Q', 'K'\n              ]\n\ndeck = []\n\nfor suit in suits:\n    for value in values:\n        deck.append([suit, value])\n\nprint(deck)\n\n#['♥', 'A'], ['♥', '2'], ['♥', '3'], ['♥', '4']...\n\n\nGenerating a Multiplication Table Using Nested Loops\nfor x in range(11):\n    for y in range(11):\n        print(f'{x} x {y} = {x * y}')\n    print('---')\n\n# 0 x 0 = 0\n# 0 x 1 = 0\n# 0 x 2 = 0\n# 0 x 3 = 0\n# 0 x 4 = 0\n# 0 x 5 = 0\n# 0 x 6 = 0\n# 0 x 7 = 0\n# 0 x 8 = 0\n# 0 x 9 = 0\n# 0 x 10 = 0\n# ---\n# 1 x 0 = 0\n# 1 x 1 = 1\n# 1 x 2 = 2\n# 1 x 3 = 3\n# 1 x 4 = 4\n# 1 x 5 = 5\n# 1 x 6 = 6\n# 1 x 7 = 7\n# 1 x 8 = 8\n# 1 x 9 = 9\n# 1 x 10 = 10"
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#double-loops-and-variable-size-windows",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#double-loops-and-variable-size-windows",
+    "objectID": "posts/guide-to-for-loops/index.html#double-loops-and-variable-size-windows",
+    "href": "posts/guide-to-for-loops/index.html#double-loops-and-variable-size-windows",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Double Loops and ‘Variable-Size Windows’",
     "text": "Double Loops and ‘Variable-Size Windows’\nA cousin of the ‘sliding window’ is a ‘sliding variable-size window.’ I think the classic problem here is looking for palindromic substrings.\ntext = 'racecar'\n\nfor i in range(len(text)): #'i' is the starting index\n    for j in range(i + 1, len(text) + 1): #'j' is the end index\n        substring = text[i:j]\n        if substring == substring[::-1] and len(substring) &gt; 1:\n            palindromes.append(substring)\nIn this solution we loop through each index position of the text (0, 1, 2…)—these are the start indices. j is our end index so we want our range object to start with 1 (the i + 1) and end with 7 (len(text) + 1) so that when we slice later the 7 will allow us to access the last character of the text (since the end number used in a slice is non-inclusive we need 1 greater than the length of our text)."
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#iterating-through-multiple-iterables-at-once-using-zip",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#iterating-through-multiple-iterables-at-once-using-zip",
+    "objectID": "posts/guide-to-for-loops/index.html#iterating-through-multiple-iterables-at-once-using-zip",
+    "href": "posts/guide-to-for-loops/index.html#iterating-through-multiple-iterables-at-once-using-zip",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Iterating Through Multiple Iterables at Once Using zip()",
     "text": "Iterating Through Multiple Iterables at Once Using zip()\nSometimes we need to loop between two sets of iterables at the same time. For example, let’s say we had a list of names and ages separate lists and we want to print them together. As long as the two lists are the same size, zip() combines the similarly indexed elements into a tuple and works similar to enumerate() as described above.\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nages = [25, 30, 35]\n\nfor name, age in zip(names, ages):\n    print(f\"{name} is {age} years old\")"
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#using-pythons-forelse-loops",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#using-pythons-forelse-loops",
+    "objectID": "posts/guide-to-for-loops/index.html#using-pythons-forelse-loops",
+    "href": "posts/guide-to-for-loops/index.html#using-pythons-forelse-loops",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Using Python’s for…else Loops",
     "text": "Using Python’s for…else Loops\nSomething I learned putting this guide together is that Python supports a for…else loop construction. The else block executes only if the main for loop completes normally without hitting a break statement.\nnames = ['Luke', 'Leia', 'Vader', 'C-3PO']\ntarget = 'Han'\n\nfor name in names:\n    if name == target:\n        print(f\"Found {target} They're on the list!\")\n        break\n\nelse:\n    print(f'{target} is not on the list!')\nI think the use case for this type of loop is very specific, but good to know!"
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#common-for-loop-pitfalls",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#common-for-loop-pitfalls",
+    "objectID": "posts/guide-to-for-loops/index.html#common-for-loop-pitfalls",
+    "href": "posts/guide-to-for-loops/index.html#common-for-loop-pitfalls",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Common for Loop Pitfalls",
     "text": "Common for Loop Pitfalls\nHere are some of the most common pitfalls when it comes to deploying for loops.\n\nOff-by-One Errors with range()\nAs illustrated above, range() is a very powerful and flexible component of many for loops. It can also be very confusing to figure out especially when the stop value in range is abstracted (i.e. is given by passing in the result of a len() function call).\nAt the most basic level, the key is to remember that because the stop value of range() is exclusive, and indexing starts at 0, then the stop value provided to range() needs to be one greater than the length of your iterable.\nSay you want to print numbers 1 through 10. Your brain might instinctively think to use range(10), when actually what you need is range(11).\n# Stops at 9\nfor i in range(1, 10):\n    print(i)\n# Output: 1, 2, 3, 4, 5, 6, 7, 8, 9\n\n# Stops at 10\nfor i in range(1, 11):\n    print(i)\n# Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10\nThis gets especially tricky with the sliding window techniques, wherein we actually need to reduce the stop value provided to range() to compensate for the window we create in the iteration.\nYou can see in the below example what happens if we forget to reduce the range. We actually don’t get an error, since slicing is forgiving, but we do get values that we don’t necessarily want. In this case, even though we want a sum of multiple numbers, the slicing just keeps going. This would be a confusing result since there is no explicit error.\nnumbers = [1, 2, 3, 4, 5]\n\n# Want to sum every 3 consecutive numbers\nfor i in range(len(numbers)):  # len(numbers) -&gt; 5\n    print(sum(numbers[i:i+3]))\n\n# 6 = (1 + 2 + 3)\n# 9 = (2 + 3 + 4)\n# 12 = (3 + 4 + 5)\n# 9 = (4 + 5)\n# 5 = 5\nPutting this example together made me realize how forgiving slicing is. Take a look at the following example and see if you can guess what it will print.\nnumbers = [1, 2, 3, 4, 5]\n\nprint(numbers[4])\nprint(numbers[10:20])\nprint(numbers[10])\nHad you asked me this before writing this guide, I would have thought the second and third print lines would both throw an IndexError. But actually here is the result.\nnumbers = [1, 2, 3, 4, 5]\n\nprint(numbers[4]) #5\nprint(numbers[10:20]) #[]\nprint(numbers[10]) #IndexError\nAnyway, the solution to this problem is to reduce the stop value provided to range() so that the looping stops once we’ve retrieved all the sums that we care about.\n# CORRECT:\nfor i in range(len(numbers) - 2):  # Stop 2 positions early\n    print(sum(numbers[i:i+3]))\n\n# 6 = (1 + 2 + 3)\n# 9 = (2 + 3 + 4)\n# 12 = (3 + 4 + 5)"
   },
   {
-    "objectID": "posts/Guide to Iterating with 'for' Loops/index.html#conclusion",
-    "href": "posts/Guide to Iterating with 'for' Loops/index.html#conclusion",
+    "objectID": "posts/guide-to-for-loops/index.html#conclusion",
+    "href": "posts/guide-to-for-loops/index.html#conclusion",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
     "section": "Conclusion",
     "text": "Conclusion\nfor loops—especially when combined with the flexibility of range() and the power of indexing and slicing—are one of the most common tools used in Python. It is therefore incumbent upon us to understand them deeply. I hope that the above guide is a good start to accomplishing that objective."
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Posts",
+    "section": "",
+    "text": "No matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "blog",
     "section": "",
-    "text": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops\n\n\n\npython\n\npython concepts\n\niteration\n\nfor loops\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nPEDAC and Mise en Place Cooking\n\n\n\npython concepts\n\nprogramming\n\nPEDAC\n\nLaunch School\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob morrin\n\n\n\n\n\nNo matching items"
+    "text": "Posts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA Beginner and Intermediate Python User’s Guide to Iterating with for Loops\n\n\n\npython\n\npython concepts\n\niteration\n\nfor loops\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nPEDAC and Mise en Place Cooking\n\n\n\npython concepts\n\nprogramming\n\nPEDAC\n\nLaunch School\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob morrin\n\n\n\n\n\nNo matching items"
   }
 ]

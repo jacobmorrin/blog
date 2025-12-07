@@ -28,5 +28,11 @@
   },
   "posts/index.qmd": {
     "index.html": "1082d299"
+  },
+  "posts/guide-to-for-loops/index.qmd": {
+    "index.html": "407d1740"
+  },
+  "posts/mise-en-place-and-pedac/index.qmd": {
+    "index.html": "13423e9c"
   }
 }
