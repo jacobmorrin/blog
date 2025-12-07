@@ -1,0 +1,96 @@
+---
+title: "PEDAC and Mise en Place Cooking"
+author: "Jacob morrin"
+date: "2025-12-07"
+date-modified: "2025-12-07"
+categories: [python concepts, programming, PEDAC, Launch School]
+image: "image.png"
+---
+## Cooking without a Plan
+So there you are in the kitchen. You've decided to make a nice meal—maybe for yourself, or maybe for someone else. You've picked the recipe, done the grocery shopping, and you're ready to jump in. You start heating up some olive oil in the pan and read step 1: 
+
+> *STEP 1: Add the diced onion to the pot*.
+
+Okay no problem you may not have chopped the onion, but you've got it in front of you. You finish chopping and throw it in the pot. Onto step 2:
+
+> *STEP 2: Add the minced garlic and 1/2 teaspoon oregano to the pot*.
+
+Garlic—shoot! Mincing that is going to take some time. And where do we keep the oregano again? I could have sworn we had that in the pantry. Is it not there? And where the heck are the measuring spoons?
+
+Things are starting to spiral. The onions are burning. The kitchen is already a mess and you're only on step 2. What went wrong?
+
+## The Two Layer Problem
+What went wrong is what Launch School calls ["The Two-Layer Problem"](https://medium.com/launch-school/the-two-layer-problem-915b7587654c). In the context of coding, the two-layer problem is defined as "learning to solve problems while simultaneously memorizing the syntax of a particular language." In other words, it is extremely difficult to solve a problem while you are at the same time learning how to use the tool you need to solve the problem. If we go back to the cooking analogy, the two-layer problem is cooking the meal, while prepping for the meal. When we try to divide our limited focus between two complex tasks, things become difficult. We get lost hacking and slashing our way through the problem, or—if we're in the kitchen—the kitchen becomes a mess and our meal is not prepared according to plan—maybe it even gets burnt!
+
+In coding, this looks like trying to solve 'find the duplicate number in this list' while simultaneously Googling 'how do Python dictionaries work' and 'what is a set in Python.' You're trying to learn the tools while solving the problem—and both suffer as a result."
+
+## Mise en Place 
+The solution to the two-layer problem in the kitchen is *mise en place*. *Mise en place* is a French culinary terms meaning "everything in its place." *Mise en place* involves reading through the recipe, preparing ingredients  (i.e. chopping the onions, measuring the spices), and organizing the kitchen in advance. Somewhat paradoxically, *mise en place* actually saves you time in the kitchen because you no longer need to search for ingredients as you cook. Who among us had not had the experience of tracking down an obscure (or not-so obscure) spice while something is cooking on the stove? Using *mise en place* also results in a higher quality output because you, the cook, can focus on ensuring the meal—the flavors—are accurate. 
+
+## PEDAC
+*PEDAC* is the *mise en place* of coding. PEDAC stands for problem, examples, data, algorithm, code. It is a structured approach to tackling coding problems that starts with establishing a strong grasp of the problem (i.e. reading the recipe) and ends with developing a conceptual algorithm for how to solve the problem (i.e. preparing and organizing your ingredients), before finally moving on the coding (i.e. cooking). 
+
+Used appropriately, *PEDAC* pushes us to separate the two processes of solving the problem and developing a coding solution. Solving the problem is a higher-level of thinking that requires thinking through an algorithm that would result in a viable solution. The algorithm should be language-agnostic, meaning that it could be operationalized in the next step with any coding language. Developing a coding solution is more tactical than strategic, wherein you grapple with the coding syntax and tools used to implement the algorithm.
+
+### PEDAC Example
+Let's see PEDAC in action. Imagine the following problem: Write a function that counts vowels in a string. Here is how I would implement PEDAC.
+
+```python
+"""
+PROBLEM:
+- Write a function that counts the vowels in a string. The function
+should take a string and count the number of vowels (aeiou) that
+occur. The fuction should return the number of vowels.
+
+RULES/RESTRICTIONS:
+- Case does not matter. We should count all vowels AEIOUaeiou
+regardless of case
+
+EXAMPLE:
+vowel_counter("A book about a boy") -> 8
+
+DATA:
+Input: string
+Output: int
+Intermediary: counter for vowels
+
+ALGORITHM:
+- DEFINE the function vowel_counter(s)
+- INITIALIZE a constant VOWELs with AEIOUaeiou
+- INITIALIZE a counter variable 
+- LOOP through each character in the string
+- CHECK if the character is in VOWELS
+    - If it is, increment count by 1
+- RETURN count
+"""
+VOWELS = 'AEIOUaeiou'
+def vowel_counter(s):
+    counter = 0
+
+    for char in s:
+        if char in VOWELS:
+            counter += 1
+    
+    return counter
+
+print(vowel_counter("A book about a boy") == 8) # True
+
+```
+When you do PEDAC correctly, the coding doesn't even feel like coding. It feels like I am just following instructions. 
+
+### Benefits of PEDAC
+#### Resisting Time Pressure
+Using PEDAC has a number of benefits. First, it challenges me to ignore time pressure. When I start a coding problem, my instinct is to jump into the coding as soon as possible. I feel this pressure to see the solution immediately. I feel the cooking analogy is applicable here. Often when I start cooking I feel a strong desire to turn the stove on and just get to the cooking part as soon as possible. But experience has shown that doing that leads to a more stressful, messy, and less enjoyable cooking experience because I am frantically shifting between the food and the pot and the preparation. The paradox is that investing the time up front to prepare the ingredients actually results in faster cooking time. PEDAC is no different. 
+
+I think this instinct to jump straight to coding—despite it being counterproductive—is similar to recent findings about AI coding assistants. [METR did a study on the impact of AI on open-source developer productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/). They found that "when developers use AI tools, they take 19% longer than without—AI makes them slower." This is in spite of the fact that developers " estimated that they were sped up by 20% on average when using AI—so they were mistaken about AI’s impact on their productivity." Bringing this back to our discussion, I imagine that it just *feels* faster using AI to jump into a coding solution, just like it *feels* faster to start heating up the oil in the kitchen before the ingredients have been prepared. 
+
+#### Flexibility
+PEDAC scales. It can be used for simple problems, but it can also be applied to advanced problems. PEDAC will help take one very complicated problem and break it down into multiple easier problems. The process of using PEDAC is also iterative, not linear. To a limited extent, PEDAC encourages shifting between your coding solution and the algorithm you've developed so that you can incorporate new information into the algorithm. 
+
+PEDAC is also flexible in how you implement it. Some developers prefer detailed written algorithms, others use pseudocode, and some sketch diagrams. The framework adapts to your learning style while maintaining its core structure.
+
+#### Confidence
+PEDAC can help build confidence. I'm just a Python beginner, but already I've encountered many problems that upon first reading, I have no idea how to solve. Rather than freak out, PEDAC provides the structure with which to approach a difficult problem. It gives you the confidence to say, "I may not know how to solve this problem, but I do know how to apply PEDAC, so let's give it a shot."
+
+## Conclusion
+Recently, a Launch School TA shared valuable advice: the best coders recognize when they're hacking and slashing, stop immediately, and return to the algorithm. The feeling of hacking and slashing is one I'm familiar with both in the kitchen and in coding. In the kitchen, I'll be sauteing onions and realize that I am not prepared for the next steps. The solution is simple—turn off the stove and go back to prepping, but for some reason taking that step "backward" is hard to take. The same goes for coding. I know when I'm grasping for a solution, feeling tantalizingly close to coming up with something out of nowhere, and ultimately spinning my wheels. The solution is easy—go back to the algorithm, go back to PEDAC. That's something—being more self-aware when I'm hacking and slashing and giving it up to return to the algorithm—I'm trying to do more intentionally.
