@@ -2,15 +2,16 @@ project:
   type: website
 
 website:
-  description: "A blog built with Quarto"
-  site-url: https://github.com/jacobmorrin/blog
-  title: "blog"
+  description: "A blog about learning Python, problem-solving, and transitioning to software engineering"
+  site-url: https://jacobmorrin.github.io/blog/
+  title: "Jacob Morrin"
   navbar:
-    left:
-        - file: index.qmd
-        - file: posts/index.qmd
+
     right:
-      - about.qmd
+      - text: "home"
+        href: https://jacobmorrin.github.io/blog/
+      - text: "about"
+        href: about.qmd
       - icon: github
         href: https://github.com/jacobmorrin
       - icon: twitter

@@ -5,16 +5,16 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>blog</title>
-<link>https://github.com/jacobmorrin/blog/</link>
-<atom:link href="https://github.com/jacobmorrin/blog/index.xml" rel="self" type="application/rss+xml"/>
-<description>A blog built with Quarto</description>
+<title>Jacob Morrin</title>
+<link>https://jacobmorrin.github.io/blog/</link>
+<atom:link href="https://jacobmorrin.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
+<description>A blog about learning Python, problem-solving, and transitioning to software engineering</description>
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Sun, 07 Dec 2025 05:00:00 GMT</lastBuildDate>
 <item>
   <title>A Beginner and Intermediate Python User’s Guide to Iterating with for Loops</title>
   <dc:creator>Jacob Morrin</dc:creator>
-  <link>https://github.com/jacobmorrin/blog/posts/guide-to-for-loops/</link>
+  <link>https://jacobmorrin.github.io/blog/posts/guide-to-for-loops/</link>
   <description><![CDATA[ 
 
 
@@ -1577,13 +1577,13 @@ font-style: inherit;"># 12 = (3 + 4 + 5)</span></span></code></pre></div></div>
   <category>python concepts</category>
   <category>iteration</category>
   <category>for loops</category>
-  <guid>https://github.com/jacobmorrin/blog/posts/guide-to-for-loops/</guid>
+  <guid>https://jacobmorrin.github.io/blog/posts/guide-to-for-loops/</guid>
   <pubDate>Sun, 07 Dec 2025 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>PEDAC and Mise en Place Cooking</title>
   <dc:creator>Jacob morrin</dc:creator>
-  <link>https://github.com/jacobmorrin/blog/posts/mise-en-place-and-pedac/</link>
+  <link>https://jacobmorrin.github.io/blog/posts/mise-en-place-and-pedac/</link>
   <description><![CDATA[ 
 
 
@@ -1775,31 +1775,20 @@ font-style: inherit;"># True</span></span></code></pre></div></div>
   <category>programming</category>
   <category>PEDAC</category>
   <category>Launch School</category>
-  <guid>https://github.com/jacobmorrin/blog/posts/mise-en-place-and-pedac/</guid>
+  <guid>https://jacobmorrin.github.io/blog/posts/mise-en-place-and-pedac/</guid>
   <pubDate>Sun, 07 Dec 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://github.com/jacobmorrin/blog/posts/mise-en-place-and-pedac/image.png" medium="image" type="image/png" height="96" width="144"/>
+  <media:content url="https://jacobmorrin.github.io/blog/posts/mise-en-place-and-pedac/image.png" medium="image" type="image/png" height="96" width="144"/>
 </item>
 <item>
-  <title>Posts</title>
-  <link>https://github.com/jacobmorrin/blog/posts/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div> ]]></description>
-  <guid>https://github.com/jacobmorrin/blog/posts/</guid>
-  <pubDate>Sun, 07 Dec 2025 17:56:33 GMT</pubDate>
+  <title></title>
+  <dc:creator>Jacob morrin</dc:creator>
+  <link>https://jacobmorrin.github.io/blog/posts/Fun with Immutability/immutability.html</link>
+  <description><![CDATA[ undefined ]]></description>
+  <category>python</category>
+  <category>python concepts</category>
+  <category>python exercises</category>
+  <guid>https://jacobmorrin.github.io/blog/posts/Fun with Immutability/immutability.html</guid>
+  <pubDate>Thu, 04 Dec 2025 05:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

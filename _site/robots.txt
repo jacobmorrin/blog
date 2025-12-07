@@ -1,1 +1,1 @@
-Sitemap: https://github.com/jacobmorrin/blog/sitemap.xml
+Sitemap: https://jacobmorrin.github.io/blog/sitemap.xml
