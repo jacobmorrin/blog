@@ -1,12 +1,7 @@
 [
   {
-    "listing": "/posts/index.html",
-    "items": []
-  },
-  {
     "listing": "/index.html",
     "items": [
-      "/posts/index.html",
       "/posts/guide-to-for-loops/index.html",
       "/posts/mise-en-place-and-pedac/index.html"
     ]
