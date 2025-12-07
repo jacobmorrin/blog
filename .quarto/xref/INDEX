@@ -19,5 +19,11 @@
   },
   "posts/Mise en Place/mise-en-place.qmd": {
     "mise-en-place.html": "61054e8a"
+  },
+  "posts/Guide to Iterating with 'for' Loops/index.qmd": {
+    "index.html": "116df1ed"
+  },
+  "posts/Mise en Place/index.qmd": {
+    "index.html": "4183cac0"
   }
 }

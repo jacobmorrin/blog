@@ -2,7 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/Guide to Iterating with 'for' Loops/for_loops.html",
+      "/posts/Guide to Iterating with 'for' Loops/index.html",
+      "/posts/Mise en Place/index.html",
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html"
     ]
