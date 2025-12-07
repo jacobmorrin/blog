@@ -1,6 +1,6 @@
 ---
 title: "A Beginner and Intermediate Python User's Guide to Iterating with `for` Loops"
-author: "Jacob morrin"
+author: "Jacob Morrin"
 date: "2025-12-07"
 date-modified: "2025-12-07"
 categories: [python, python concepts, iteration, for loops]
@@ -16,7 +16,6 @@ items = [1, 2, 3, 4, 5]
 
 for item in items:
     print(item)
-
 ```
 
 I think the loop variable can be confusing for beginners because it seems to come out of nowhere. What is `item`? Where was it defined? Is it important that the word `item` was used? The answer is that this is a special type of variable that Python uses to move through the iterable. In fact, `item` is simply a placeholder and could be anything: `num`, `idx`, and even just a basic `_`.
@@ -469,3 +468,6 @@ for i in range(len(numbers) - 2):  # Stop 2 positions early
 # 9 = (2 + 3 + 4)
 # 12 = (3 + 4 + 5)
 ```
+
+## Conclusion 
+`for` loops—especially when combined with the flexibility of `range()` and the power of indexing and slicing—are one of the most common tools used in Python. It is therefore incumbent upon us to understand them deeply. I hope that the above guide is a good start to accomplishing that objective.
