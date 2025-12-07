@@ -56,13 +56,6 @@
     "text": "Conclusion\nRecently, a Launch School TA shared valuable advice: the best coders recognize when they’re hacking and slashing, stop immediately, and return to the algorithm. The feeling of hacking and slashing is one I’m familiar with both in the kitchen and in coding. In the kitchen, I’ll be sauteing onions and realize that I am not prepared for the next steps. The solution is simple—turn off the stove and go back to prepping, but for some reason taking that step “backward” is hard to take. The same goes for coding. I know when I’m grasping for a solution, feeling tantalizingly close to coming up with something out of nowhere, and ultimately spinning my wheels. The solution is easy—go back to the algorithm, go back to PEDAC. That’s something—being more self-aware when I’m hacking and slashing and giving it up to return to the algorithm—I’m trying to do more intentionally."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code.\nlst = [1, 2, 3]\n\nfor item in lst:\n    print('testing...')"
-  },
-  {
     "objectID": "posts/Guide to Iterating with 'for' Loops/index.html",
     "href": "posts/Guide to Iterating with 'for' Loops/index.html",
     "title": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops",
@@ -175,17 +168,10 @@
     "text": "Conclusion\nfor loops—especially when combined with the flexibility of range() and the power of indexing and slicing—are one of the most common tools used in Python. It is therefore incumbent upon us to understand them deeply. I hope that the above guide is a good start to accomplishing that objective."
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "blog",
     "section": "",
-    "text": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops\n\n\n\npython\n\npython concepts\n\niteration\n\nfor loops\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nPEDAC and Mise en Place Cooking\n\n\n\npython concepts\n\nprogramming\n\nPEDAC\n\nLaunch School\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob morrin\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nDec 4, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nDec 1, 2025\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "A Beginner and Intermediate Python User’s Guide to Iterating with for Loops\n\n\n\npython\n\npython concepts\n\niteration\n\nfor loops\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nPEDAC and Mise en Place Cooking\n\n\n\npython concepts\n\nprogramming\n\nPEDAC\n\nLaunch School\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob morrin\n\n\n\n\n\nNo matching items"
   }
 ]
