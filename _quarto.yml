@@ -6,6 +6,9 @@ website:
   site-url: https://github.com/jacobmorrin/blog
   title: "blog"
   navbar:
+    left:
+        - file: index.qmd
+        - file: posts/index.qmd
     right:
       - about.qmd
       - icon: github

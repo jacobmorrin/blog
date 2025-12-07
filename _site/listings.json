@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Guide to Iterating with 'for' Loops/for_loops.html",
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html"
     ]
