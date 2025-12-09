@@ -1,0 +1,254 @@
+---
+title: "Guide to Adding to `lists`"
+author: "Jacob Morrin"
+date: "2025-12-09"
+date-modified: "2025-12-09"
+filters:
+  - pyodide
+categories: [python concepts, programming, lists, Launch School]
+draft: True
+---
+## Introduction
+Working with `lists` is essential in Python, so I'm developing a series of posts on list manipulation. This is the first post in that series and it is focused on different ways of adding items to a `list` object. Most of this information comes right from the [official Python documentation](https://docs.python.org/3/tutorial/datastructures.html), but I've tried to include some supplementary examples and discussion that may be useful.
+
+## Adding to a `list`
+So far I've been able to identify six different ways of adding to a `list`, each of which has slightly different use cases and effects! They are:
+
+1. `list.append(x)`
+2. `list.extend(iterable)`
+3. `a[len(a):] = [x]` (slicing)
+4. `list.insert(i, x)`
+5. `+=` (In-Place Extension)
+6. `+` (Concatenation)
+
+Let's jump in!
+
+## Methods
+### Appending: `list.append(x)`
+`list.append(x)` has to be one of my most used Python functions so of course it's going first. `list.append()` does not create a new list, it mutates the original list in place.
+
+```{pyodide-python}
+a = [1, 2, 3]
+a.append(4)
+print(a)
+```
+
+`list.append(x)` adds the entire item to the list. So if you pass another list to `list.append(x)`, the entire list will be added as a single item.
+
+```{pyodide-python}
+a = [1, 2, 3]
+b = [4, 5]
+a.append(b)
+print(a)
+```
+
+As noted above, `list.append(x)` takes only one argument. Trying to add more than one item using `list.append(x)` will result in a `TypeError`.
+
+```{pyodide-python}
+a = [1, 2, 3]
+a.append(4, 5)
+print(a)
+```
+
+### Extending: `list.extend(iterable)`
+Use `list.extend(iterable)` when you want to add all of the items from an iterable to another list. `list.extend(iterable)` does not create a new list, it mutates the original list in place. `list.extend(iterable)` does not create a new list, it mutates the original list in place.
+
+```{pyodide-python}
+a = [1, 2, 3]
+b = [4, 5, 6]
+a.extend(b)
+print(a)
+```
+
+`list.extend(iterable)` can be used with any collection.
+
+#### Tuples
+```{pyodide-python}
+a = [1, 2]
+a.extend((3, 4))  # [1, 2, 3, 4]
+print(a)
+```
+
+#### Strings(!)
+```{pyodide-python}
+a = [1, 2, 3, 4]
+a.extend(('hi'))  # [1, 2, 3, 4, 'h', 'i']
+print(a)
+```
+
+#### Sets
+```{pyodide-python}
+a = [1, 2, 3, 4, 'h', 'i']
+a.extend({7, 8})  # [1, 2, 3, 4, 'h', 'i', 7, 8]
+print(a)
+```
+
+#### Ranges
+```{pyodide-python}
+a = [1, 2, 3, 4]
+a.extend(range(5, 11))  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(a)
+```
+
+#### Generators
+```{pyodide-python}
+a = [1, 2]
+a.extend(x * 2 for x in [3, 4])  # [1, 2, 6, 8]
+print(a)
+```
+
+### Slicing: `a[len(a):] = [x]`
+While not necessarily a Python method, I learned from the documentation that `list.append(x)` and `list.extend(iterable)` are equivalent to  `a[len(a):] = [x]`. Let's break down what that means using an example. 
+
+Let's say you have `a = [1, 2, 3]`. The element `3` is at index position `2`, and the length of `a` (`len(a)`) is `3`.
+
+When you write `a[3:]`, you're creating a slice starting at index 3 (which doesn't exist yet) through the end of the list. In other words, `a[3:]` is an empty slice at the end of the list. When you assign to this empty slice with `a[3:] = [4]`, you're essentially telling Python to insert the `[4]` at the end.
+
+```{pyodide-python}
+a = [1, 2, 3] #len(a) is 3
+
+a[len(a):] = [4]
+print(a)
+```
+
+This technique also covers the functionality of `list.extend(iterable)`
+
+```{pyodide-python}
+a = [1, 2, 3]
+
+a[len(a):] = [4, 5]
+print(a)
+```
+
+One quick interesting sidenote on slicing. This technique works as long as the start index is greater than or equal to the length of the list. Python will simply append to the end rather than throwing an error.
+
+```{pyodide-python}
+a = [1, 2, 3]
+
+a[100:] = [4]  # Since there is no index 100, Python appends the 4 to the end of the list
+print(a)
+```
+
+### Inserting: `list.insert(i, x)`
+Use `list.insert(i, x)` to insert an item `x` at a specific index position `i` into `list`:
+
+```{pyodide-python}
+a = [1, 2, 4]
+a.insert(2, 3)
+print(a)
+```
+
+Using an index position greater than `len(a)` would have the same effect as `list.append(x)`:
+
+```{pyodide-python}
+a = [1, 2, 4]
+a.insert(100, 3) # There is no index position at 100
+
+b = [1, 2, 4]
+b.append(3)
+
+print(a == b)
+```
+
+`list.insert(iterable)` does not create a new list, it mutates the original list in place.
+
+### Note on Return Values for `list.append()`, `list.extend()`, and `list.insert()`
+All of the techniques described thus far are Python methods and have a return value of `None`. They also all mutate the original list in place.
+
+```{pyodide-python}
+a = []
+print(a.append(1))
+print(a.extend([2]))
+print(a.insert(2, 3))
+print(a)
+```
+
+## Operators
+### Concatenation: `+`
+Concatenate literally means to "link (things) together in a chain or series." In the context of Python `lists`, concatenation means to create a new `list` object by linking together two other `list` objects using the `+` operator. Concatenation is thus different from the other methods covered in this guide because it returns a new list and leaves the original `list` objects unmodified. Here is an example, and try to guess the ouput before running the code:
+
+```{pyodide-python}
+a = [1, 2, 3]
+a + [4]
+print(a)
+```
+
+When you concatenate, both operands must be of the same type. You can use concatenation to combine `strings`, `lists`, `tuples`, but not `sets`, `dictionaries`, or `ranges`. Attempting to use concatenation with operands of different types will cause Python to throw a `TypeError`:
+
+```{pyodide-python}
+a = (1, 2, 3)
+b = [2, 3, 4]
+c = a + b # You cannot concatenate a list and an tuple
+print(c)
+```
+
+Another `TypeError` example:
+```{pyodide-python}
+a = [1, 2, 3]
+a = a + 4 # You cannot concatenate a list and an int
+print(a)
+```
+
+I think the two key things to remember when using concatenation are:
+
+1. It returns a new `list`, so you must capture the `list` with a reference to a variable, or else Python will discard it. In other words, it does not mutate in place.
+2. You can only use concatenation with operands of the same type.
+
+### In-Place Extension: `+=`
+We can also add to a `list` using the augmented assignment operator, also known as the in-place addition operator. `+=` is essentially shorthand for `list.extend(iterable)`, which means that (a) you must use `+=` with an `iterable` and (b) that it will modify the original list in place.
+
+```{pyodide-python}
+a = [1, 2, 3]
+a += [4]
+print(a)
+```
+
+Trying to use `+=` with a non-iterable object will cause Python to throw a `TypeError`.
+
+```{pyodide-python}
+a = [1, 2, 3]
+a += 4
+print(a)
+```
+
+### Important Differences Between `+=` and `+`
+It's tempting to view using `+=` and `+` as accomplishing the same thing, but they are different in important ways. As noted earlier, `+` is concatenation, which creates a new `list` object whereas `+=` mutates the original list object in place. 
+
+```{pyodide-python}
+a = [1, 2, 3]
+b = a  # a and b reference the same list
+print(a is b) # True — a and b reference the same object
+
+a += [4] # `+=` mutates the list object in place so...
+print(b)  # [1, 2, 3, 4] - b sees the change!
+
+a = a + [5]
+print(a)  # a is now pointing to a new list object
+print(b)  # [1, 2, 3, 4] - b doesn't see this change
+print(a is b) # False — a and b now reference different objects
+```
+
+## Summary
+In this post I've covered six different methods for adding items to lists. It's a lot of different techniques to take in so here is a quick summary of what to use and when:
+
+* Use `.append()` for adding a single item to a list
+* Use `.extend()` or `+=` with an iterable to add the elements of that iterable to another list
+* Use `.insert()` when you need to insert an item at a specific index position
+* Use `+` when you need to keep the original list unchanged
+
+And here is a table summary of the methods and techniques discussed in this guide:
+
+Technique | Method | Type of Parameter | Mutates in Place? | Returns | Best Used For | Example
+---|---|---|---|---|---|---
+Appending| `list.append(x)` | Anything | Yes | `None` | Adding a single item to the end | `lst.append(4)`
+Extending | `list.extend(iterable)` | Iterable | Yes | `None` | Adding multiple items from any iterable | `lst.extend([4, 5])`
+Slicing | `a[len(a):] = [x]` | Iterable | Yes | NA | Understanding how append/extend work under the hood | `lst[len(lst):] = [4, 5]`
+Inserting | `list.insert(i, x)` | `index` and object | Yes | `None` | Adding an item at a specific position | `lst.insert(0, 'first')`
+In-Place Extension |`+=`| Iterable | Yes | NA | Quick syntax for extending a list | `lst += [4, 5]`
+Concatenation| `+` | Iterable | No | New `list` | Combining lists without modifying originals | `new = lst + [4, 5]`
+
+
+
+
+
+

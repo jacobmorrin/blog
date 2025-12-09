@@ -8,13 +8,15 @@ website:
   navbar:
 
     right:
-      - text: "home"
+      - text: "posts"
         href: https://jacobmorrin.github.io/blog/
       - text: "about"
         href: about.qmd
+      - icon: linkedin
+        href: https://www.linkedin.com/in/jacobmorrin/
       - icon: github
         href: https://github.com/jacobmorrin
-      - icon: twitter
+      - icon: Linkedin
         href: https://twitter.com
 format:
   html:
