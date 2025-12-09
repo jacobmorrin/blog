@@ -6,7 +6,6 @@ date-modified: "2025-12-09"
 filters:
   - pyodide
 categories: [python concepts, programming, lists, Launch School]
-draft: True
 ---
 ## Introduction
 Working with `lists` is essential in Python, so I'm developing a series of posts on list manipulation. This is the first post in that series and it is focused on different ways of adding items to a `list` object. Most of this information comes right from the [official Python documentation](https://docs.python.org/3/tutorial/datastructures.html), but I've tried to include some supplementary examples and discussion that may be useful.
