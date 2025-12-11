@@ -1,0 +1,181 @@
+---
+title: "Looping through Dictionaries in Python"
+author: "Jacob Morrin"
+date: "2025-12-11"
+date-modified: "2025-12-11"
+filters:
+  - pyodide
+categories: [python, python dictionaries]
+image: "image.png"
+---
+## Introduction 
+The purpose of this guide is to cover the three main ways of looping through a dictionary. Namely, through its keys, its values, and its keys and values simultaneously.
+
+## Brief Dictionary Refresher
+Dictionaries are a type of collection in Python that store key-value pairs. Keys can be any hashable value. To be "hashable," a value must be immutable, which means that `int`, `string`, `float`, `tuple` (if they don't contain non-hashable items, like a list), `frozenset`, and `bool` can all be keys. The values of a key-value pair can be anything.
+
+A dictionary is created with braces `{}`. Empty braces `{}` create an empty dictionary. Within the braces, a `:` indicates a key-value pair, and a `,` separates key-value pairs. The value of a key-value pair can be accessed by using the dictionary name and the key in brackets `[]`.
+
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+print(my_dict['Sansa'])
+```
+
+## Looping through Keys
+There are two ways to loop through a dictionary’s keys in Python.
+
+The simplest and most direct way of iterating through a `dictionary` is to use a basic `for loop`. The basic `for loop`, as shown below, will loop through a `dictionary`’s `keys`.
+
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+
+for key in my_dict:
+    print(key)
+```
+
+Another, more explicit way of iterating through a dictionary’s keys is to use the `.keys()` method.
+
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+
+for key in my_dict.keys():
+    print(key)
+```
+
+Given that the default behavior of `for loops` is to loop through `keys`, using `.keys()` is redundant, though it does make the purpose of the loop more explicit and `.keys()` has utility in other situations. For example, you could use `.keys()` to create a `list` of a dictionary's keys.
+
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+print(list(my_dict.keys()))
+```
+
+## Looping through Values
+Similarly, there are two ways to access a dictionary's values using a `for loop`.
+
+The first way is by using the key accessed through the basic `for loop`, as outlined above. Since the basic `for loop` loops through the dictionary's `keys`, we can use the syntax for accessing a dictionary's values within the loop.
+
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+
+for key in my_dict:
+    print(my_dict[key]) # Accesses the dictionary's values
+```
+
+The more direct way of accessing a dictionary's values is using the `.values()` method.
+
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+
+for value in my_dict.values():
+    print(value)
+```
+
+## Looping through Keys and Values Simultaneously with `.items()`
+As long as we have access to a key, we can access both the key and the value.
+
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+
+for key in my_dict:
+    print(f'{key} is a member of {my_dict[key]}.')
+```
+
+But the Python method `.items()` is perhaps an easier and more explicit way of accomplishing the same thing. To use `.items()` we just need to use two loop variables. The first will be assigned the `key`, the second the `value`.^[This is called tuple unpacking!]
+
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+
+for key, value in my_dict.items():
+    print(f'{key} is a member of {value}.')
+```
+
+## Avoiding `RuntimeError`
+When looping through a `dictionary`, Python expects the size of the dictionary to remain the same. If you add or remove keys during iteration, you change the dictionary's size, and Python will throw a `RuntimeError`
+
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+
+for key, value in my_dict.items():
+    if value == 'House Lannister':
+        del my_dict[key]
+```
+
+A better approach when seeking to remove or delete `dictionary` items is to create a new dictionary. Here are two ways to create a new dictionary.
+
+Using a standard `for loop`:
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+new_dict = {}
+
+for key, value in my_dict.items():
+    if value != 'House Lannister':
+        new_dict[key] = value
+print(new_dict)
+```
+
+Using a `dictionary` comprehension:
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+
+new_dict = {key: value for key, value in my_dict.items() if value != "House Lannister"}
+
+print(new_dict)
+```
+
+Another strategy could be to collect the keys you want to delete first into a list:
+```{pyodide-python}
+my_dict = {'Sansa': 'House Stark', 'Tyrion': 'House Lannister', 'Robert': 'House Baratheon'}
+
+keys_to_delete = [key for key in my_dict if my_dict[key] == 'House Lannister']
+
+for key in keys_to_delete:
+    del my_dict[key]
+
+print(my_dict) # 'Tyrion': 'House Lannister' has been deleted
+```
+
+## Summary
+A `for loop` by default loops through a dictionary's keys, and with the keys it is easy enough to access the corresponding value. 
+
+Sometimes all we care about is a dictionary's `values`. For example, imagine a question where you were given a dictionary of dates and temperatures and asked to calculate the average temperature for the month.
+
+```{pyodide-python}
+temps = {
+    1: 67,
+    2: 72,
+    3: 80,
+    4: 65,
+    5: 81
+}
+
+total_temp = 0
+
+for temp in temps.values():
+    total_temp += temp
+
+avg_temp = total_temp / len(temps)
+print(avg_temp)
+```
+
+`.items()` is similarly useful when you want to return certain `keys` or `values` based on certain conditions. Using the example above, imagine we wanted to know which dates had temperatures of 80 or above.
+
+```{pyodide-python}
+temps = {
+    1: 67,
+    2: 72,
+    3: 80,
+    4: 65,
+    5: 81
+}
+
+dates_above_80 = []
+
+for date, temp in temps.items():
+    if temp >= 80:
+        dates_above_80.append(date)
+
+print(dates_above_80)
+```
+
+In short, `.keys()`, `.values()`, and `items()` are extremely useful methods looping through dictionaries and, more broadly, manipulating data within a `dictionary`.
+

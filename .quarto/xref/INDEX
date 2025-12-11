@@ -43,5 +43,20 @@
   },
   "posts/2025-12-adding-to-lists/index.qmd": {
     "index.html": "095ff47c"
+  },
+  "posts/2025-12-iterating-with-for-loops/index.qmd": {
+    "index.html": "bdb84d41"
+  },
+  "posts/2025-12-mise-en-place-and-pedac/index.qmd": {
+    "index.html": "d0069100"
+  },
+  "posts/2025-12-six-ways-to-add-items-to-python-lists/index.qmd": {
+    "index.html": "982f7738"
+  },
+  "posts/2025-12-guide-to-looping-dictionaries/index.qmd": {
+    "index.html": "134b56f0"
+  },
+  "posts/2025-12-iterating-with-for-loops-in-python/index.qmd": {
+    "index.html": "09a5f718"
   }
 }
