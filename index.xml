@@ -14,7 +14,7 @@
 <item>
   <title>Six Ways to Add Items to Python Lists</title>
   <dc:creator>Jacob Morrin</dc:creator>
-  <link>https://jacobmorrin.github.io/blog/posts/2025-12-adding-to-lists/</link>
+  <link>https://jacobmorrin.github.io/blog/posts/2025-12-six-ways-to-add-items-to-python-lists/</link>
   <description><![CDATA[ 
 <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.46.0/min/vs/loader.js"></script>
 <script type="module" id="qpyodide-monaco-editor-init">
@@ -257,13 +257,13 @@
   <category>programming</category>
   <category>lists</category>
   <category>Launch School</category>
-  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-adding-to-lists/</guid>
+  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-six-ways-to-add-items-to-python-lists/</guid>
   <pubDate>Tue, 09 Dec 2025 05:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>A Beginner and Intermediate Python User’s Guide to Iterating with for Loops</title>
+  <title>Iterating with for Loops</title>
   <dc:creator>Jacob Morrin</dc:creator>
-  <link>https://jacobmorrin.github.io/blog/posts/2025-12-guide-to-for-loops/</link>
+  <link>https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops/</link>
   <description><![CDATA[ 
 
 
@@ -1827,14 +1827,14 @@ font-style: inherit;"># 12 = (3 + 4 + 5)</span></span></code></pre></div></div>
   <category>iteration</category>
   <category>for loops</category>
   <category>loops</category>
-  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-guide-to-for-loops/</guid>
+  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops/</guid>
   <pubDate>Sun, 07 Dec 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-guide-to-for-loops/loops.png" medium="image" type="image/png" height="68" width="144"/>
+  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops/loops.png" medium="image" type="image/png" height="68" width="144"/>
 </item>
 <item>
   <title>PEDAC and Mise en Place Cooking</title>
   <dc:creator>Jacob Morrin</dc:creator>
-  <link>https://jacobmorrin.github.io/blog/posts/mise-en-place-and-pedac/</link>
+  <link>https://jacobmorrin.github.io/blog/posts/2025-12-mise-en-place-and-pedac/</link>
   <description><![CDATA[ 
 
 
@@ -2026,9 +2026,9 @@ font-style: inherit;"># True</span></span></code></pre></div></div>
   <category>programming</category>
   <category>PEDAC</category>
   <category>Launch School</category>
-  <guid>https://jacobmorrin.github.io/blog/posts/mise-en-place-and-pedac/</guid>
+  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-mise-en-place-and-pedac/</guid>
   <pubDate>Sun, 07 Dec 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://jacobmorrin.github.io/blog/posts/mise-en-place-and-pedac/image.png" medium="image" type="image/png" height="96" width="144"/>
+  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-mise-en-place-and-pedac/image.png" medium="image" type="image/png" height="96" width="144"/>
 </item>
 </channel>
 </rss>
