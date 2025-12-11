@@ -10,7 +10,113 @@
 <atom:link href="https://jacobmorrin.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog about learning Python, problem-solving, and transitioning to software engineering</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Tue, 09 Dec 2025 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 11 Dec 2025 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Looping through Dictionaries in Python</title>
+  <dc:creator>Jacob Morrin</dc:creator>
+  <link>https://jacobmorrin.github.io/blog/posts/2025-12-guide-to-looping-dictionaries/</link>
+  <description><![CDATA[ 
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.46.0/min/vs/loader.js"></script>
+<script type="module" id="qpyodide-monaco-editor-init">
+
+  // Configure the Monaco Editor's loader
+  require.config({
+    paths: {
+      'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.46.0/min/vs'
+    }
+  });
+</script>
+
+
+
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The purpose of this guide is to cover the three main ways of looping through a dictionary. Namely, through its keys, its values, and its keys and values simultaneously.</p>
+</section>
+<section id="brief-dictionary-refresher" class="level2">
+<h2 class="anchored" data-anchor-id="brief-dictionary-refresher">Brief Dictionary Refresher</h2>
+<p>Dictionaries are a type of collection in Python that store key-value pairs. Keys can be any hashable value. To be “hashable,” a value must be immutable, which means that <code>int</code>, <code>string</code>, <code>float</code>, <code>tuple</code> (if they don’t contain non-hashable items, like a list), <code>frozenset</code>, and <code>bool</code> can all be keys. The values of a key-value pair can be anything.</p>
+<p>A dictionary is created with braces <code>{}</code>. Empty braces <code>{}</code> create an empty dictionary. Within the braces, a <code>:</code> indicates a key-value pair, and a <code>,</code> separates key-value pairs. The value of a key-value pair can be accessed by using the dictionary name and the key in brackets <code>[]</code>.</p>
+<div id="qpyodide-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="looping-through-keys" class="level2">
+<h2 class="anchored" data-anchor-id="looping-through-keys">Looping through Keys</h2>
+<p>There are two ways to loop through a dictionary’s keys in Python.</p>
+<p>The simplest and most direct way of iterating through a <code>dictionary</code> is to use a basic <code>for loop</code>. The basic <code>for loop</code>, as shown below, will loop through a <code>dictionary</code>’s <code>keys</code>.</p>
+<div id="qpyodide-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Another, more explicit way of iterating through a dictionary’s keys is to use the <code>.keys()</code> method.</p>
+<div id="qpyodide-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Given that the default behavior of <code>for loops</code> is to loop through <code>keys</code>, using <code>.keys()</code> is redundant, though it does make the purpose of the loop more explicit and <code>.keys()</code> has utility in other situations. For example, you could use <code>.keys()</code> to create a <code>list</code> of a dictionary’s keys.</p>
+<div id="qpyodide-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="looping-through-values" class="level2">
+<h2 class="anchored" data-anchor-id="looping-through-values">Looping through Values</h2>
+<p>Similarly, there are two ways to access a dictionary’s values using a <code>for loop</code>.</p>
+<p>The first way is by using the key accessed through the basic <code>for loop</code>, as outlined above. Since the basic <code>for loop</code> loops through the dictionary’s <code>keys</code>, we can use the syntax for accessing a dictionary’s values within the loop.</p>
+<div id="qpyodide-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The more direct way of accessing a dictionary’s values is using the <code>.values()</code> method.</p>
+<div id="qpyodide-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="looping-through-keys-and-values-simultaneously-with-.items" class="level2">
+<h2 class="anchored" data-anchor-id="looping-through-keys-and-values-simultaneously-with-.items">Looping through Keys and Values Simultaneously with <code>.items()</code></h2>
+<p>As long as we have access to a key, we can access both the key and the value.</p>
+<div id="qpyodide-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>But the Python method <code>.items()</code> is perhaps an easier and more explicit way of accomplishing the same thing. To use <code>.items()</code> we just need to use two loop variables. The first will be assigned the <code>key</code>, the second the <code>value</code>.<sup>1</sup></p>
+<div id="qpyodide-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="avoiding-runtimeerror" class="level2">
+<h2 class="anchored" data-anchor-id="avoiding-runtimeerror">Avoiding <code>RuntimeError</code></h2>
+<p>When looping through a <code>dictionary</code>, Python expects the size of the dictionary to remain the same. If you add or remove keys during iteration, you change the dictionary’s size, and Python will throw a <code>RuntimeError</code></p>
+<div id="qpyodide-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>A better approach when seeking to remove or delete <code>dictionary</code> items is to create a new dictionary. Here are two ways to create a new dictionary.</p>
+<p>Using a standard <code>for loop</code>:</p>
+<div id="qpyodide-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Using a <code>dictionary</code> comprehension:</p>
+<div id="qpyodide-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Another strategy could be to collect the keys you want to delete first into a list:</p>
+<div id="qpyodide-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>A <code>for loop</code> by default loops through a dictionary’s keys, and with the keys it is easy enough to access the corresponding value.</p>
+<p>Sometimes all we care about is a dictionary’s <code>values</code>. For example, imagine a question where you were given a dictionary of dates and temperatures and asked to calculate the average temperature for the month.</p>
+<div id="qpyodide-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p><code>.items()</code> is similarly useful when you want to return certain <code>keys</code> or <code>values</code> based on certain conditions. Using the example above, imagine we wanted to know which dates had temperatures of 80 or above.</p>
+<div id="qpyodide-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>In short, <code>.keys()</code>, <code>.values()</code>, and <code>items()</code> are extremely useful methods looping through dictionaries and, more broadly, manipulating data within a <code>dictionary</code>.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This is called tuple unpacking!↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>python</category>
+  <category>python dictionaries</category>
+  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-guide-to-looping-dictionaries/</guid>
+  <pubDate>Thu, 11 Dec 2025 05:00:00 GMT</pubDate>
+  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-guide-to-looping-dictionaries/image.png" medium="image" type="image/png"/>
+</item>
 <item>
   <title>Six Ways to Add Items to Python Lists</title>
   <dc:creator>Jacob Morrin</dc:creator>
@@ -263,7 +369,7 @@
 <item>
   <title>Iterating with for Loops</title>
   <dc:creator>Jacob Morrin</dc:creator>
-  <link>https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops/</link>
+  <link>https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops-in-python/</link>
   <description><![CDATA[ 
 
 
@@ -1827,9 +1933,9 @@ font-style: inherit;"># 12 = (3 + 4 + 5)</span></span></code></pre></div></div>
   <category>iteration</category>
   <category>for loops</category>
   <category>loops</category>
-  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops/</guid>
+  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops-in-python/</guid>
   <pubDate>Sun, 07 Dec 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops/loops.png" medium="image" type="image/png" height="68" width="144"/>
+  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops-in-python/loops.png" medium="image" type="image/png" height="68" width="144"/>
 </item>
 <item>
   <title>PEDAC and Mise en Place Cooking</title>

@@ -49,116 +49,179 @@
     "text": "Summary\nIn this post I’ve covered six different methods for adding items to lists. It’s a lot of different techniques to take in so here is a quick summary of what to use and when:\n\nUse .append() for adding a single item to a list\nUse .extend() or += with an iterable to add the elements of that iterable to another list\nUse .insert() when you need to insert an item at a specific index position\nUse + when you need to keep the original list unchanged\n\nAnd here is a table summary of the methods and techniques discussed in this guide:\n\n\n\n\n\n\n\n\n\n\n\n\nTechnique\nMethod\nType of Parameter\nMutates in Place?\nReturns\nBest Used For\nExample\n\n\n\n\nAppending\nlist.append(x)\nAnything\nYes\nNone\nAdding a single item to the end\nlst.append(4)\n\n\nExtending\nlist.extend(iterable)\nIterable\nYes\nNone\nAdding multiple items from any iterable\nlst.extend([4, 5])\n\n\nSlicing\na[len(a):] = [x]\nIterable\nYes\nNA\nUnderstanding how append/extend work under the hood\nlst[len(lst):] = [4, 5]\n\n\nInserting\nlist.insert(i, x)\nindex and object\nYes\nNone\nAdding an item at a specific position\nlst.insert(0, 'first')\n\n\nIn-Place Extension\n+=\nIterable\nYes\nNA\nQuick syntax for extending a list\nlst += [4, 5]\n\n\nConcatenation\n+\nIterable\nNo\nNew list\nCombining lists without modifying originals\nnew = lst + [4, 5]"
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html",
     "title": "Iterating with for Loops",
     "section": "",
     "text": "This is my guide to iterating through for loops. for loops—based on my albeit limited experience—are probably the most common type of looping mechanism used in Python. So it behooves us to understand them well. This guide is an attempt to succinctly capture the main ways in which this type of loop can be used."
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#what-is-this",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#what-is-this",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#what-is-this",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#what-is-this",
     "title": "Iterating with for Loops",
     "section": "",
     "text": "This is my guide to iterating through for loops. for loops—based on my albeit limited experience—are probably the most common type of looping mechanism used in Python. So it behooves us to understand them well. This guide is an attempt to succinctly capture the main ways in which this type of loop can be used."
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#the-structure-of-a-for-loop",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#the-structure-of-a-for-loop",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#the-structure-of-a-for-loop",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#the-structure-of-a-for-loop",
     "title": "Iterating with for Loops",
     "section": "The Structure of a for Loop",
     "text": "The Structure of a for Loop\nBefore jumping into various techniques, a brief refresher on the basic structure of for loops may be helpful. At its core a for loop really has two elements: a loop variable and an iterable object. In the below example, item is the loop variable, and items is the iterable object.\nitems = [1, 2, 3, 4, 5]\n\nfor item in items:\n    print(item)\nI think the loop variable can be confusing for beginners because it seems to come out of nowhere. What is item? Where was it defined? Is it important that the word item was used? The answer is that this is a special type of variable that Python uses to move through the iterable. In fact, item is simply a placeholder and could be anything: num, idx, and even just a basic _.\nThe second important component of the for loop is the iterable object. Iterable objects in Python include lists, sets, dictionaries, strings, and other special objects, for example range(). More on that below."
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#item-by-item",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#item-by-item",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#item-by-item",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#item-by-item",
     "title": "Iterating with for Loops",
     "section": "Item-by-Item",
     "text": "Item-by-Item\nThe most basic way that we can iterate with a for loop is to simply move through an iterable item-by-item. In the example above, for instance, we loop through each element of the list and print it. Each time the loop runs item is replaced by the next element of the list. Pretty simple!"
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#by-index",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#by-index",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#by-index",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#by-index",
     "title": "Iterating with for Loops",
     "section": "By Index",
     "text": "By Index\nThe next most common way of looping through an iterable is by index. This assumes of course that the iterable has indexes. That means lists, tuples, strings and range objects. When we want to loop through the indexes of an iterable with indexes, most of the time we actually need to loop through an appropriate sequence of numbers as opposed the iterable itself. And to do that we are going to use a range object.\n\nWhat is a range object?\nA range object is a special immutable sequence in Python that represents a progression of integers. A range object can take three arguments: start, stop, step. start is the number at which the range object should start counting from. stop is where it should stop generating numbers. And step indicates the amount of numbers that should be skipped to get to the next number (e.g. if you wanted to count by twos or threes).\nPython will interpret a single number provided to a range object as the stop argument.\nCrucial for our discussion of loops is that the stop argument is interpreted to be non-inclusive, and that the default start argument will be 0.\nSome examples:\nrange(10) #0, 1, 2, 3, 4, 5, 6, 7, 8, 9\n\nrange(0,10,2) #2, 4, 6, 8\n\nIterating with range\nrange()’s step function means that we can easily iterate through every other element of an iterable.\nfor num in range(0, 11, 2):\n    print(num)\n\n0\n2\n4\n6\n8\n10\n\n\n\nUsing len in combination with range\nA common tactic when you want to loop through indexes is to use range in combination with len. The output of len is the number of characters or elements in an iterable.\nlen('start') #5\nlen([1,2,3]) #3\nlen starts counting at 1, which is useful for us in the context of using range to in a for loop. Imagine, for example, that we wanted to print every letter of this alphabet string: 'abcdefghijklmnopqrstuvwxyz.' The easiest way to do this of course would be to use the item-by-item approach above. But let’s just say you wanted to make things difficult and print the letters according to their index number.\nThat means we need to iterate through all 26 letters. More specifically, we need to iterate through the numbers 0 to 25, because indexing starts at 0.Using range and len in conjunction is a perfect solution to this. len(abcdefghijklmnopqrstuvwxyz) is going to give us 26. And recall that the stop argument of range is non-inclusive, so range(26) is going to give us exactly the sequence of numbers we need to accomplish our task. Even better, we can simply pass len(abcdefghijklmnopqrstuvwxyz) as the stop argument to the range object:\nalphabet = 'abcdefghijklmnopqrstuvwxyz'\n\nfor num in range(len(alphabet)):\n    print(num) #0, 1, 2, ... 25\nNotice here that what prints is nothing from alphabet. All alphabet gives us is the number 26. The following would be equivalent to the above:\nalphabet = 'abcdefghijklmnopqrstuvwxyz'\n\nfor num in range(26):\n    print(num) #0, 1, 2, ... 25\nGoing back to our task—accessing and printing each letter of the alphabet via index, now what is left to do is the accessing part. To do that, we use the same syntax we normally use for accessing an element via index: iterable[index].\nLet’s go back to the loop. First, let’s take a look at the loop variable. While any variable name here would suffice, it can be helpful (for yourself and others) to use something more descriptive. Since our aim is to loop through the index numbers, we can use a word like idx or index as our variable name:\nalphabet = 'abcdefghijklmnopqrstuvwxyz'\n\nfor index in range(len(alphabet)):\n    print(alphabet[index]) #a, b, c, ... z\nVoilà! We’ve done it. As the loop variable index increases alphabet[index] allows us to access each element of our alphabet string."
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#comparing-adjacent-elements",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#comparing-adjacent-elements",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#comparing-adjacent-elements",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#comparing-adjacent-elements",
     "title": "Iterating with for Loops",
     "section": "Comparing Adjacent Elements",
     "text": "Comparing Adjacent Elements\nUsing the above functions and techniques we can also compare adjacent iterable elements. For example, let’s say you wanted to compare one element with the next element in the iterable to see if it was increasing or decreasing.\nnumbers = [5, 12, 8, 15, 3, 20]\n\n# Compare each element with the next one\nfor i in range(len(numbers) - 1):\n    current = numbers[i] # Access current element\n    next_item = numbers[i + 1] # Access next element\n    \n    if next_item &gt; current:\n        print(f\"{current} → {next_item}: Increasing\")\n    else:\n        print(f\"{current} → {next_item}: Decreasing\")\nNotice here that you need to reduce the size of the range object because of [i + 1] which would result in an IndexError if you did not subtract 1 from the range object.\nThis is actually a simple form of the ‘sliding window’ technique we’ll explore more later. Here we’re using a window of size 2 (i + 1) to look at pairs of adjacent elements."
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#by-index-and-element-using-enumerate",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#by-index-and-element-using-enumerate",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#by-index-and-element-using-enumerate",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#by-index-and-element-using-enumerate",
     "title": "Iterating with for Loops",
     "section": "By Index and Element Using enumerate()",
     "text": "By Index and Element Using enumerate()\nWe’ve seen how to loop item-by-item and through the index, but sometimes we want to do both. Rather than create two separate loops, Python has a great function, enumerate(), that allows us to iterate through both the items and the indexes simultaneously.\nenumerate takes as arguments an iterable and an optional start value, which has a default value of 0 (i.e. starting from the first element in the iterable). When we use enumerate in a for loop, we use two loop variables: one for the index, and one for the item in the index position. Since the return value of enumerate is a tuple with the index value first, it’s important that our loop variables are specified in that order or else we’ll get confused! It looks like this:\nmeals = ['pizza', 'pasta', 'salad']\n\nfor index, meal in enumerate(meals):\n    print(index, meal)\n\n#0 pizza\n#1 pasta\n#2 salad\nenumerate is a great tool to have in your Python toolkit, especially when you encounter tricky problems that involve both indices and the items. Take the following problem as an example.\n\nExamples Using enumerate()\nYou are given a list of daily max temperatures.\ndecember_temps = [\n    32, 28, 35, 40, 38, 33, 29, 25, 22, 30,  # Dec 1-10\n    34, 38, 42, 45, 43, 39, 36, 32, 28, 31,  # Dec 11-20\n    35, 38, 34, 30, 27, 24, 20, 18, 22, 26,  # Dec 21-30\n    30                                        # Dec 31\n]\nYou task is to return the days of the month that had temperatures less than 30 degrees. Without enumerate we would probably need to loop through the list, check to see if the temp was less than 30, and then return the relevant index positions (+1 because they start at 0). With enumerate() the solution is much simpler:\ndays_below_30 = []\nfor day, temp in enumerate(december_temps, start=1):\n    if temp &lt; 30:\n        days_below_30.append(day)\nWe could also write the same answer as a list comprehension:\ndays_below_30 = [day for day, temp in enumerate(december_temps, start=1) if temp &lt; 30]\nAnother common use case of enumerate() is with strings. Often there are these problems that ask you to do something with every other letter. That is a great time to use enumerate() because for this type of problem we need to know the indexes (the ‘every other’ part of the problem) and we need to do something with the character. Imagine a problem that asks you, for example, to capitalize every other letter of a string. With enumerate() your solution could look something like this:\nstring = \"how does this string read in your head?\"\nnew_string = ''\n\nfor index, character in enumerate(string):\n    if index % 2 == 0:\n        new_string += character.upper()\n    else:\n        new_string += character\n\nprint(new_string) # HoW DoEs tHiS StRiNg rEaD In yOuR HeAd?\nVery nifty."
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#breaking-out-of-for-loops",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#breaking-out-of-for-loops",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#breaking-out-of-for-loops",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#breaking-out-of-for-loops",
     "title": "Iterating with for Loops",
     "section": "Breaking Out of for Loops",
     "text": "Breaking Out of for Loops\nSometimes we want the loop to stop looping when a certain condition has been met. You may, for example, want to stop looping once you’ve found the thing you’re looking for. We can stop the loop using break.\n# Stop searching when you've found the 'target'\nnumbers = [1, 2, 3, 4, 101, 6, 7]\n\nfor num in numbers:\n    if num &gt; 100:\n        print('Found a number greater than 100!')\n        break\n    print('Checking numbers...')"
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#skipping-iterations-using-continue",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#skipping-iterations-using-continue",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#skipping-iterations-using-continue",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#skipping-iterations-using-continue",
     "title": "Iterating with for Loops",
     "section": "Skipping Iterations Using continue",
     "text": "Skipping Iterations Using continue\nWe can use continue to skip the rest of a loop and jump to the next iteration. This is useful if you know there are values you want to ignore in your list.\n\nPrinting Odd Numbers Using continue\nfor num in range(20):\n    if num % 2 == 0:\n        continue\n    print(num)\n\n# 1\n# 3\n# 5\n# 7\n# 9\n# 11\n# 13\n# 15\n# 17\n# 19\n\n\nSkipping Weekdays Using continue\nWEEKEND = ['Sat', 'Sun']\ndays = ['Mon', 'Tues', 'Sat', 'Thu', 'Fri', 'Sun']\n\nfor day in days:\n    if day in WEEKEND:\n        continue\n    print(f'{day} is a weekday!')\n\n# Mon is a weekday!\n# Tues is a weekday!\n# Thu is a weekday!\n# Fri is a weekday!"
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#using-sliding-windows-to-evaluate-multiple-elements-in-a-row",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#using-sliding-windows-to-evaluate-multiple-elements-in-a-row",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#using-sliding-windows-to-evaluate-multiple-elements-in-a-row",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#using-sliding-windows-to-evaluate-multiple-elements-in-a-row",
     "title": "Iterating with for Loops",
     "section": "Using ‘Sliding Windows’ to Evaluate Multiple Elements in a Row",
     "text": "Using ‘Sliding Windows’ to Evaluate Multiple Elements in a Row\nAnother tricky form of iteration involves evaluating consecutive elements simultaneously. This is probably best explained via an example. Imagine a problem that asks you to return the highest sum of three consecutive elements in a list. Given this list:\nlst = [1, 2, 3, 4, 5]\nWe need to iterate through this list three elements at a time to compare the following:\nsum([1,2,3])\nsum([2,3,4])\nsum([3,4,5])\nThere are a couple of different techniques for how to do this.\n\nCreating a ‘window’ with Slicing\nOne good technique for this type of problem is to use slicing.\nnumbers = [1, 2, 3, 4, 5]\nmax_sum = 0\n\nfor i in range(len(numbers) - 2):\n    current_sum = sum(numbers[i:i+3])  # Slice of 3 elements\n    if current_sum &gt; max_sum:\n        max_sum = current_sum\nIn this loop the way we create the ‘window’ is numbers[i:i+3]. On the first loop through, for example, this will yield numbers[0:3]. Each time we go through the loop, as i increases by 1, the window moves through the list.\nFor this type of looping it is crucial to remember that we need to update the range object to reflect the fact that we are moving a ‘window’ through the iterable. The i+3 means that our slice is going to ‘hit’ the end of the range object before i.\nIt’s worth going in-depth on this because I think it can be confusing. Going back to our example, our list numbers has 5 index slots. [i:i+3] is going to have the following values:\nLoop 1: [0:3]\nLoop 2: [1:4]\nLoop 3: [2:5]\nLoop 4: [3:6] # There is no 6th index position!\nAs you can see, even though there are 5 index position, when we use a window we won’t actually loop through every index position because the ‘right side’ of our ‘window’ will hit the end of the range on at the end of the third loop—at least that’s how I like to think about it. That is why we need to reduce the size of the range object to compensate. The formula for reducing the range object is the length of the iterable (5 in this case) less the size of the window (3 in this case), which means we need to reduce the range object, in this case, by 2. range(len(number)) == range(5), so we want range(5 - 2) so that we iterate through the 0, 1, 2 index positions."
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#nested-for-loops",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#nested-for-loops",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#nested-for-loops",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#nested-for-loops",
     "title": "Iterating with for Loops",
     "section": "Nested for Loops",
     "text": "Nested for Loops\nMore advanced problems often require loops within loops. A nested loop is a loop within another loop. When you have a nested loop, the inner loop completes all of its iterations for each iteration of the outer loop. A clock provides a useful analogy. A clock’s hour hand is like an outer loop, and the minute hand is like an inner loop. For each movement of the hour hand (outer loop), the minute hand (inner loop) must complete a full set of iterations. Here’s that analogy expressed as a loop:\nfor hour in range(0, 24): #24 hours in a day (0 is first hour, 23 last)\n    for minute in range(0, 60): #60 minutes in an hour (but don't show 60)\n        print(f'{hour}:{minute:02d}')\n# 0:00\n# 0:01\n# 0:02\n# 0:03\n# 0:04\n# 0:05\n# 0:06\n# 0:07\n# 0:08\n# 0:09\n# 0:10\n# 0:11\n# 0:12\nNested loops are great for generating two-dimensional arrays or matrices—think a multiplication table or a deck of cards.\n\nGenerating a Deck of Cards Using Nested Loops\nsuits = ['♥', '♣', '♦', '♠']\nvalues = ['A', '2', '3', '4', '5', '6',\n              '7', '8', '9', '10',\n              'J', 'Q', 'K'\n              ]\n\ndeck = []\n\nfor suit in suits:\n    for value in values:\n        deck.append([suit, value])\n\nprint(deck)\n\n#['♥', 'A'], ['♥', '2'], ['♥', '3'], ['♥', '4']...\n\n\nGenerating a Multiplication Table Using Nested Loops\nfor x in range(11):\n    for y in range(11):\n        print(f'{x} x {y} = {x * y}')\n    print('---')\n\n# 0 x 0 = 0\n# 0 x 1 = 0\n# 0 x 2 = 0\n# 0 x 3 = 0\n# 0 x 4 = 0\n# 0 x 5 = 0\n# 0 x 6 = 0\n# 0 x 7 = 0\n# 0 x 8 = 0\n# 0 x 9 = 0\n# 0 x 10 = 0\n# ---\n# 1 x 0 = 0\n# 1 x 1 = 1\n# 1 x 2 = 2\n# 1 x 3 = 3\n# 1 x 4 = 4\n# 1 x 5 = 5\n# 1 x 6 = 6\n# 1 x 7 = 7\n# 1 x 8 = 8\n# 1 x 9 = 9\n# 1 x 10 = 10"
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#double-loops-and-variable-size-windows",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#double-loops-and-variable-size-windows",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#double-loops-and-variable-size-windows",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#double-loops-and-variable-size-windows",
     "title": "Iterating with for Loops",
     "section": "Double Loops and ‘Variable-Size Windows’",
     "text": "Double Loops and ‘Variable-Size Windows’\nA cousin of the ‘sliding window’ is a ‘sliding variable-size window.’ I think the classic problem here is looking for palindromic substrings.\ntext = 'racecar'\n\nfor i in range(len(text)): #'i' is the starting index\n    for j in range(i + 1, len(text) + 1): #'j' is the end index\n        substring = text[i:j]\n        if substring == substring[::-1] and len(substring) &gt; 1:\n            palindromes.append(substring)\nIn this solution we loop through each index position of the text (0, 1, 2…)—these are the start indices. j is our end index so we want our range object to start with 1 (the i + 1) and end with 7 (len(text) + 1) so that when we slice later the 7 will allow us to access the last character of the text (since the end number used in a slice is non-inclusive we need 1 greater than the length of our text)."
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#iterating-through-multiple-iterables-at-once-using-zip",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#iterating-through-multiple-iterables-at-once-using-zip",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#iterating-through-multiple-iterables-at-once-using-zip",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#iterating-through-multiple-iterables-at-once-using-zip",
     "title": "Iterating with for Loops",
     "section": "Iterating Through Multiple Iterables at Once Using zip()",
     "text": "Iterating Through Multiple Iterables at Once Using zip()\nSometimes we need to loop between two sets of iterables at the same time. For example, let’s say we had a list of names and ages separate lists and we want to print them together. As long as the two lists are the same size, zip() combines the similarly indexed elements into a tuple and works similar to enumerate() as described above.\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nages = [25, 30, 35]\n\nfor name, age in zip(names, ages):\n    print(f\"{name} is {age} years old\")"
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#using-pythons-forelse-loops",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#using-pythons-forelse-loops",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#using-pythons-forelse-loops",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#using-pythons-forelse-loops",
     "title": "Iterating with for Loops",
     "section": "Using Python’s for…else Loops",
     "text": "Using Python’s for…else Loops\nSomething I learned putting this guide together is that Python supports a for…else loop construction. The else block executes only if the main for loop completes normally without hitting a break statement.\nnames = ['Luke', 'Leia', 'Vader', 'C-3PO']\ntarget = 'Han'\n\nfor name in names:\n    if name == target:\n        print(f\"Found {target} They're on the list!\")\n        break\n\nelse:\n    print(f'{target} is not on the list!')\nI think the use case for this type of loop is very specific, but good to know!"
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#common-for-loop-pitfalls",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#common-for-loop-pitfalls",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#common-for-loop-pitfalls",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#common-for-loop-pitfalls",
     "title": "Iterating with for Loops",
     "section": "Common for Loop Pitfalls",
     "text": "Common for Loop Pitfalls\nHere are some of the most common pitfalls when it comes to deploying for loops.\n\nOff-by-One Errors with range()\nAs illustrated above, range() is a very powerful and flexible component of many for loops. It can also be very confusing to figure out especially when the stop value in range is abstracted (i.e. is given by passing in the result of a len() function call).\nAt the most basic level, the key is to remember that because the stop value of range() is exclusive, and indexing starts at 0, then the stop value provided to range() needs to be one greater than the length of your iterable.\nSay you want to print numbers 1 through 10. Your brain might instinctively think to use range(10), when actually what you need is range(11).\n# Stops at 9\nfor i in range(1, 10):\n    print(i)\n# Output: 1, 2, 3, 4, 5, 6, 7, 8, 9\n\n# Stops at 10\nfor i in range(1, 11):\n    print(i)\n# Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10\nThis gets especially tricky with the sliding window techniques, wherein we actually need to reduce the stop value provided to range() to compensate for the window we create in the iteration.\nYou can see in the below example what happens if we forget to reduce the range. We actually don’t get an error, since slicing is forgiving, but we do get values that we don’t necessarily want. In this case, even though we want a sum of multiple numbers, the slicing just keeps going. This would be a confusing result since there is no explicit error.\nnumbers = [1, 2, 3, 4, 5]\n\n# Want to sum every 3 consecutive numbers\nfor i in range(len(numbers)):  # len(numbers) -&gt; 5\n    print(sum(numbers[i:i+3]))\n\n# 6 = (1 + 2 + 3)\n# 9 = (2 + 3 + 4)\n# 12 = (3 + 4 + 5)\n# 9 = (4 + 5)\n# 5 = 5\nPutting this example together made me realize how forgiving slicing is. Take a look at the following example and see if you can guess what it will print.\nnumbers = [1, 2, 3, 4, 5]\n\nprint(numbers[4])\nprint(numbers[10:20])\nprint(numbers[10])\nHad you asked me this before writing this guide, I would have thought the second and third print lines would both throw an IndexError. But actually here is the result.\nnumbers = [1, 2, 3, 4, 5]\n\nprint(numbers[4]) #5\nprint(numbers[10:20]) #[]\nprint(numbers[10]) #IndexError\nAnyway, the solution to this problem is to reduce the stop value provided to range() so that the looping stops once we’ve retrieved all the sums that we care about.\n# CORRECT:\nfor i in range(len(numbers) - 2):  # Stop 2 positions early\n    print(sum(numbers[i:i+3]))\n\n# 6 = (1 + 2 + 3)\n# 9 = (2 + 3 + 4)\n# 12 = (3 + 4 + 5)"
   },
   {
-    "objectID": "posts/2025-12-iterating-with-for-loops/index.html#conclusion",
-    "href": "posts/2025-12-iterating-with-for-loops/index.html#conclusion",
+    "objectID": "posts/2025-12-iterating-with-for-loops-in-python/index.html#conclusion",
+    "href": "posts/2025-12-iterating-with-for-loops-in-python/index.html#conclusion",
     "title": "Iterating with for Loops",
     "section": "Conclusion",
     "text": "Conclusion\nfor loops—especially when combined with the flexibility of range() and the power of indexing and slicing—are one of the most common tools used in Python. It is therefore incumbent upon us to understand them deeply. I hope that the above guide is a good start to accomplishing that objective."
+  },
+  {
+    "objectID": "posts/2025-12-guide-to-looping-dictionaries/index.html",
+    "href": "posts/2025-12-guide-to-looping-dictionaries/index.html",
+    "title": "Looping through Dictionaries in Python",
+    "section": "",
+    "text": "The purpose of this guide is to cover the three main ways of looping through a dictionary. Namely, through its keys, its values, and its keys and values simultaneously."
+  },
+  {
+    "objectID": "posts/2025-12-guide-to-looping-dictionaries/index.html#introduction",
+    "href": "posts/2025-12-guide-to-looping-dictionaries/index.html#introduction",
+    "title": "Looping through Dictionaries in Python",
+    "section": "",
+    "text": "The purpose of this guide is to cover the three main ways of looping through a dictionary. Namely, through its keys, its values, and its keys and values simultaneously."
+  },
+  {
+    "objectID": "posts/2025-12-guide-to-looping-dictionaries/index.html#brief-dictionary-refresher",
+    "href": "posts/2025-12-guide-to-looping-dictionaries/index.html#brief-dictionary-refresher",
+    "title": "Looping through Dictionaries in Python",
+    "section": "Brief Dictionary Refresher",
+    "text": "Brief Dictionary Refresher\nDictionaries are a type of collection in Python that store key-value pairs. Keys can be any hashable value. To be “hashable,” a value must be immutable, which means that int, string, float, tuple (if they don’t contain non-hashable items, like a list), frozenset, and bool can all be keys. The values of a key-value pair can be anything.\nA dictionary is created with braces {}. Empty braces {} create an empty dictionary. Within the braces, a : indicates a key-value pair, and a , separates key-value pairs. The value of a key-value pair can be accessed by using the dictionary name and the key in brackets [].\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "posts/2025-12-guide-to-looping-dictionaries/index.html#looping-through-keys",
+    "href": "posts/2025-12-guide-to-looping-dictionaries/index.html#looping-through-keys",
+    "title": "Looping through Dictionaries in Python",
+    "section": "Looping through Keys",
+    "text": "Looping through Keys\nThere are two ways to loop through a dictionary’s keys in Python.\nThe simplest and most direct way of iterating through a dictionary is to use a basic for loop. The basic for loop, as shown below, will loop through a dictionary’s keys.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAnother, more explicit way of iterating through a dictionary’s keys is to use the .keys() method.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nGiven that the default behavior of for loops is to loop through keys, using .keys() is redundant, though it does make the purpose of the loop more explicit and .keys() has utility in other situations. For example, you could use .keys() to create a list of a dictionary’s keys.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "posts/2025-12-guide-to-looping-dictionaries/index.html#looping-through-values",
+    "href": "posts/2025-12-guide-to-looping-dictionaries/index.html#looping-through-values",
+    "title": "Looping through Dictionaries in Python",
+    "section": "Looping through Values",
+    "text": "Looping through Values\nSimilarly, there are two ways to access a dictionary’s values using a for loop.\nThe first way is by using the key accessed through the basic for loop, as outlined above. Since the basic for loop loops through the dictionary’s keys, we can use the syntax for accessing a dictionary’s values within the loop.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe more direct way of accessing a dictionary’s values is using the .values() method.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "posts/2025-12-guide-to-looping-dictionaries/index.html#looping-through-keys-and-values-simultaneously-with-.items",
+    "href": "posts/2025-12-guide-to-looping-dictionaries/index.html#looping-through-keys-and-values-simultaneously-with-.items",
+    "title": "Looping through Dictionaries in Python",
+    "section": "Looping through Keys and Values Simultaneously with .items()",
+    "text": "Looping through Keys and Values Simultaneously with .items()\nAs long as we have access to a key, we can access both the key and the value.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBut the Python method .items() is perhaps an easier and more explicit way of accomplishing the same thing. To use .items() we just need to use two loop variables. The first will be assigned the key, the second the value.1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "posts/2025-12-guide-to-looping-dictionaries/index.html#avoiding-runtimeerror",
+    "href": "posts/2025-12-guide-to-looping-dictionaries/index.html#avoiding-runtimeerror",
+    "title": "Looping through Dictionaries in Python",
+    "section": "Avoiding RuntimeError",
+    "text": "Avoiding RuntimeError\nWhen looping through a dictionary, Python expects the size of the dictionary to remain the same. If you add or remove keys during iteration, you change the dictionary’s size, and Python will throw a RuntimeError\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nA better approach when seeking to remove or delete dictionary items is to create a new dictionary. Here are two ways to create a new dictionary.\nUsing a standard for loop:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nUsing a dictionary comprehension:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAnother strategy could be to collect the keys you want to delete first into a list:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "posts/2025-12-guide-to-looping-dictionaries/index.html#summary",
+    "href": "posts/2025-12-guide-to-looping-dictionaries/index.html#summary",
+    "title": "Looping through Dictionaries in Python",
+    "section": "Summary",
+    "text": "Summary\nA for loop by default loops through a dictionary’s keys, and with the keys it is easy enough to access the corresponding value.\nSometimes all we care about is a dictionary’s values. For example, imagine a question where you were given a dictionary of dates and temperatures and asked to calculate the average temperature for the month.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n.items() is similarly useful when you want to return certain keys or values based on certain conditions. Using the example above, imagine we wanted to know which dates had temperatures of 80 or above.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIn short, .keys(), .values(), and items() are extremely useful methods looping through dictionaries and, more broadly, manipulating data within a dictionary."
+  },
+  {
+    "objectID": "posts/2025-12-guide-to-looping-dictionaries/index.html#footnotes",
+    "href": "posts/2025-12-guide-to-looping-dictionaries/index.html#footnotes",
+    "title": "Looping through Dictionaries in Python",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is called tuple unpacking!↩︎"
   },
   {
     "objectID": "posts/2025-12-mise-en-place-and-pedac/index.html",
@@ -207,6 +270,6 @@
     "href": "index.html",
     "title": "posts",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSix Ways to Add Items to Python Lists\n\n\n\npython concepts\n\nprogramming\n\nlists\n\nLaunch School\n\n\n\n\n\n\n\n\n\nDec 9, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nIterating with for Loops\n\n\n\npython\n\npython concepts\n\niteration\n\nfor loops\n\nloops\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nPEDAC and Mise en Place Cooking\n\n\n\npython concepts\n\nprogramming\n\nPEDAC\n\nLaunch School\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob Morrin\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nLooping through Dictionaries in Python\n\n\n\npython\n\npython dictionaries\n\n\n\n\n\n\n\n\n\nDec 11, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nSix Ways to Add Items to Python Lists\n\n\n\npython concepts\n\nprogramming\n\nlists\n\nLaunch School\n\n\n\n\n\n\n\n\n\nDec 9, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nIterating with for Loops\n\n\n\npython\n\npython concepts\n\niteration\n\nfor loops\n\nloops\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob Morrin\n\n\n\n\n\n\n\n\n\n\n\n\nPEDAC and Mise en Place Cooking\n\n\n\npython concepts\n\nprogramming\n\nPEDAC\n\nLaunch School\n\n\n\n\n\n\n\n\n\nDec 7, 2025\n\n\nJacob Morrin\n\n\n\n\n\nNo matching items"
   }
 ]

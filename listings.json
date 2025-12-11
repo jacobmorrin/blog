@@ -2,8 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2025-12-guide-to-looping-dictionaries/index.html",
       "/posts/2025-12-six-ways-to-add-items-to-python-lists/index.html",
-      "/posts/2025-12-iterating-with-for-loops/index.html",
+      "/posts/2025-12-iterating-with-for-loops-in-python/index.html",
       "/posts/2025-12-mise-en-place-and-pedac/index.html"
     ]
   }
