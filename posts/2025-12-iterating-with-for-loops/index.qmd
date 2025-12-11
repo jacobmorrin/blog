@@ -1,5 +1,5 @@
 ---
-title: "A Beginner and Intermediate Python User's Guide to Iterating with `for` Loops"
+title: "Iterating with `for` Loops"
 author: "Jacob Morrin"
 date: "2025-12-07"
 date-modified: "2025-12-07"
