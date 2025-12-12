@@ -6,7 +6,6 @@ date-modified: "2025-12-11"
 filters:
   - pyodide
 categories: [python, python dictionaries]
-image: "image.png"
 ---
 ## Introduction 
 The purpose of this guide is to cover the three main ways of looping through a dictionary. Namely, through its keys, its values, and its keys and values simultaneously.

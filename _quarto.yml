@@ -20,10 +20,8 @@ website:
         href: https://twitter.com
 format:
   html:
+    include-after-body: counter.html
     theme:
       - yeti
       - brand
     css: styles.css
-
-
-
