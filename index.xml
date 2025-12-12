@@ -14,7 +14,7 @@
 <item>
   <title>Looping through Dictionaries in Python</title>
   <dc:creator>Jacob Morrin</dc:creator>
-  <link>https://jacobmorrin.github.io/blog/posts/2025-12-guide-to-looping-dictionaries/</link>
+  <link>https://jacobmorrin.github.io/blog/posts/2025-12-11-guide-to-looping-dictionaries/</link>
   <description><![CDATA[ 
 <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.46.0/min/vs/loader.js"></script>
 <script type="module" id="qpyodide-monaco-editor-init">
@@ -113,14 +113,13 @@
 </section></div> ]]></description>
   <category>python</category>
   <category>python dictionaries</category>
-  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-guide-to-looping-dictionaries/</guid>
+  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-11-guide-to-looping-dictionaries/</guid>
   <pubDate>Thu, 11 Dec 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-guide-to-looping-dictionaries/image.png" medium="image" type="image/png"/>
 </item>
 <item>
   <title>Six Ways to Add Items to Python Lists</title>
   <dc:creator>Jacob Morrin</dc:creator>
-  <link>https://jacobmorrin.github.io/blog/posts/2025-12-six-ways-to-add-items-to-python-lists/</link>
+  <link>https://jacobmorrin.github.io/blog/posts/2025-12-09-six-ways-to-add-items-to-python-lists/</link>
   <description><![CDATA[ 
 <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.46.0/min/vs/loader.js"></script>
 <script type="module" id="qpyodide-monaco-editor-init">
@@ -359,17 +358,15 @@
 </section>
 
  ]]></description>
-  <category>python concepts</category>
-  <category>programming</category>
-  <category>lists</category>
-  <category>Launch School</category>
-  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-six-ways-to-add-items-to-python-lists/</guid>
+  <category>python</category>
+  <category>python lists</category>
+  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-09-six-ways-to-add-items-to-python-lists/</guid>
   <pubDate>Tue, 09 Dec 2025 05:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Iterating with for Loops</title>
+  <title>Iterating with for Loops in Python</title>
   <dc:creator>Jacob Morrin</dc:creator>
-  <link>https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops-in-python/</link>
+  <link>https://jacobmorrin.github.io/blog/posts/2025-12-07-iterating-with-for-loops-in-python/</link>
   <description><![CDATA[ 
 
 
@@ -1929,18 +1926,17 @@ font-style: inherit;"># 12 = (3 + 4 + 5)</span></span></code></pre></div></div>
 
  ]]></description>
   <category>python</category>
-  <category>python concepts</category>
   <category>iteration</category>
   <category>for loops</category>
   <category>loops</category>
-  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops-in-python/</guid>
+  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-07-iterating-with-for-loops-in-python/</guid>
   <pubDate>Sun, 07 Dec 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-iterating-with-for-loops-in-python/loops.png" medium="image" type="image/png" height="68" width="144"/>
+  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-07-iterating-with-for-loops-in-python/loops.png" medium="image" type="image/png" height="68" width="144"/>
 </item>
 <item>
   <title>PEDAC and Mise en Place Cooking</title>
   <dc:creator>Jacob Morrin</dc:creator>
-  <link>https://jacobmorrin.github.io/blog/posts/2025-12-mise-en-place-and-pedac/</link>
+  <link>https://jacobmorrin.github.io/blog/posts/2025-12-07-mise-en-place-and-pedac/</link>
   <description><![CDATA[ 
 
 
@@ -2128,13 +2124,12 @@ font-style: inherit;"># True</span></span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>python concepts</category>
-  <category>programming</category>
+  <category>python</category>
   <category>PEDAC</category>
   <category>Launch School</category>
-  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-mise-en-place-and-pedac/</guid>
+  <guid>https://jacobmorrin.github.io/blog/posts/2025-12-07-mise-en-place-and-pedac/</guid>
   <pubDate>Sun, 07 Dec 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-mise-en-place-and-pedac/image.png" medium="image" type="image/png" height="96" width="144"/>
+  <media:content url="https://jacobmorrin.github.io/blog/posts/2025-12-07-mise-en-place-and-pedac/image.png" medium="image" type="image/png" height="96" width="144"/>
 </item>
 </channel>
 </rss>
